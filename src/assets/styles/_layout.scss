@@ -1,0 +1,125 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+p, ul, h1, h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+
+  @media(hover) {
+    transition: .3s color;
+    &:hover {
+      color: #00C9A5;
+    }
+  }
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: #1D3945;
+  z-index: 1;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 50px;
+  margin: 0 auto;
+  @media(max-width: 1819px) {
+    padding: 0 55px;
+  }
+  @media(max-width: 1279px) {
+    padding: 0 20px;
+  }
+  @media(max-width: 719px) {
+    padding: 0 14px;
+  }
+}
+
+.f {
+  display: flex;
+
+  &-ac {
+    align-items: center;
+  }
+
+  &-w {
+    flex-wrap: wrap;
+  }
+
+  &-js {
+    justify-content: space-between;
+  }
+
+  &-jc {
+    justify-content: center;
+  }
+  &-dc {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  gap: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 19px;
+  color: #1D3945!important;
+  @media(hover) {
+    &:hover {
+      svg {
+        transform: rotate(1360deg);
+      }
+    }
+  }
+  @media(max-width: 719px) {
+    gap: 11px;
+    font-size: 16px;
+  }
+  svg {
+    transition: .5s transform;
+    width: 53px;
+    @media(max-width: 719px) {
+      width: 45px;
+    }
+  }
+  &-text {
+    small {
+      font-size: 0.68em;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  gap: 11px;
+  &-link {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: block;
+    --size: 33px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #F4F4F4;
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: #8F8F8F;
+      stroke: #8F8F8F;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+include ../utils/mixins
+//include ../components/ui/btn
+
+block variables
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+        title #{title}
+        //link(rel="stylesheet" href="fonts.css")
+
+
+    body.lock-padding.load._anim-scroll(class=pageClass)
+        #app.wrapper
+
+            include ../components/TheHeader
+            main
+                block content
+            include ../components/TheFooter
+
+        //script(src='https://api-maps.yandex.ru/2.1/?apikey=7bb6600f-06be-4757-8639-3520cba46e58&lang=ru_RU')
