@@ -1,0 +1,203 @@
+.discounts {
+  overflow: hidden;
+  margin-top: 155px;
+  @media(max-width: 1819px) {
+    margin-top: 120px;
+  }
+  @media(max-width: 1279px) {
+    margin-top: 110px;
+  }
+  @media(max-width: 959px) {
+    margin-top: 100px;
+  }
+  @media(max-width: 719px) {
+    margin-top: 85px;
+  }
+
+  &-title {
+    max-width: 1187px;
+    line-height: 118%;
+    @media(max-width: 959px) and (min-width: 720px) {
+      font-size: 35px;
+    }
+  }
+
+  &-description {
+    max-width: 786px;
+    font-size: 15px;
+    line-height: 183.5%;
+    opacity: 0.8;
+    margin-top: 25px;
+    @media(max-width: 1819px) {
+      font-size: 16px;
+      max-width: 869px;
+    }
+    @media(max-width: 1279px) {
+      margin-top: 35px;
+    }
+    @media(max-width: 959px) {
+      margin-top: 30px;
+      max-width: 629px;
+    }
+    @media(max-width: 719px) {
+      display: none;
+    }
+  }
+
+  &-slider {
+    overflow: visible;
+    margin-top: 65px;
+    @media(max-width: 1819px) {
+      margin-top: 50px;
+    }
+    @media(max-width: 1279px) {
+      margin-top: 35px;
+    }
+  }
+
+  &-item {
+    overflow: hidden;
+    border-radius: 54px;
+    width: 434px;
+    height: 423px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 45px 50px;
+    color: #fff;
+    margin-right: 30px;
+    z-index: 1;
+
+    &:before {
+      border-radius: inherit;
+      content: '';
+      position: absolute;
+      z-index: -2;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: .3s transform;
+      background: radial-gradient(66.94% 68.68% at 70.39% 77.42%, #FFF069 1.04%, #FF8125 100%);
+    }
+    &:nth-child(2):before {
+      background: radial-gradient(95.05% 65.96% at 105.53% 71.51%, #00C000 0%, #00C8D8 100%);
+    }
+    &:nth-child(3):before {
+      background: radial-gradient(69.7% 71.51% at 20.85% 14.66%, #2F8FFF 0%, #C446FF 100%);
+    }
+    &:nth-child(4):before {
+      background: radial-gradient(60.02% 40.88% at 41.36% 37.25%, #FE4863 0%, #E50018 100%);
+    }
+
+    @media(max-width: 1279px) {
+      width: 338px;
+      height: 329px;
+      border-radius: 42px;
+      padding: 35px 40px 30px;
+      margin-right: 20px;
+    }
+    @media(max-width: 959px) {
+      width: 371px;
+      height: 362px;
+      border-radius: 54px;
+      padding: 40px 45px 30px;
+    }
+    @media(max-width: 719px) {
+      width: 262px;
+      height: 351px;
+      border-radius: 44px;
+      padding: 30px 20px 30px 30px;
+      margin-right: 15px;
+    }
+
+    @media(hover) {
+      &:hover {
+        color: #fff;
+        &:before {
+          transform: scale(1.3);
+        }
+        .discounts-item-img {
+          transform: scale(1.1);
+        }
+        .btn {
+          background: #FF7223;
+          border-color: #FF7223;
+          color: #fff;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-title {
+      font-size: 38px;
+      line-height: 110.5%;
+      @media(max-width: 1279px) {
+        font-size: 30px;
+      }
+      @media(max-width: 959px) {
+        font-size: 33px;
+      }
+      @media(max-width: 719px) {
+        font-size: 24px;
+      }
+    }
+
+    &-text {
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 149%;
+      @media(max-width: 1279px) {
+        font-size: 14px;
+        margin-top: 15px;
+      }
+      @media(max-width: 959px) {
+        font-size: 16px;
+      }
+    }
+
+    &-btn {
+      pointer-events: none;
+      margin-top: auto;
+
+      .btn {
+        display: inline-flex;
+        width: auto;
+        padding: 17px 25px;
+        border-radius: 22px;
+        font-size: 12px;
+        line-height: 170%;
+        font-weight: 500;
+        letter-spacing: 0.155em;
+
+        @media(max-width: 1279px) {
+          padding: 15px 23px;
+          border-radius: 20px;
+        }
+        @media(max-width: 959px) {
+          font-size: 13px;
+          padding: 17px 25px;
+          border-radius: 22px;
+        }
+        @media(max-width: 719px) {
+          font-size: 12px;
+          padding: 14px 21px;
+          border-radius: 18px;
+        }
+      }
+    }
+
+    &-img {
+      transition: .3s transform;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}

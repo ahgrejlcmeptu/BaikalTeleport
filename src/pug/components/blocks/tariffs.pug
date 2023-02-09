@@ -1,0 +1,82 @@
+mixin tariffsItem(props)
+    .tariffs-item.swiper-slide(class=[{'tariffs-item_discount': props.oldPrice}])
+        if props.oldPrice
+            .tariffs-item-tag
+                +svg('sprite.svg#tag')
+        h6.tariffs-item-title!= props.title
+        p.tariffs-item-text!= props.text
+        .tariffs-item-speed.f.f-ac
+            +svg('sprite.svg#speed')
+            span!= props.speed
+                |  
+                small Мбит/сек
+        .tariffs-item-price.f.f-js
+            .tariffs-item-value!= props.price
+                small  ₽/мес
+            if props.oldPrice
+                .tariffs-item-old!= props.oldPrice
+                    small  ₽/мес
+
+        .tariffs-item-btn
+            .btn(class=[props.oldPrice ? 'btn-orange' : 'btn-green'])
+                span!= !props.oldPrice ? 'Подключить' : 'Подключить со скидкой'
+        .tariffs-item-link.f.f-jc
+            a(href='#') Подробнее о тарифе
+
+-
+    var tariffsList = [
+        {
+            title: '«КОСМОС. <br> АКЦИЯ 50»',
+            text: 'Минимум вложений за отличный интернет',
+            speed: '50',
+            price: '450',
+            oldPrice: '650'
+        },
+        {
+            title: '«КОСМОС. <br> АКЦИЯ 100»',
+            text: 'Минимум вложений за отличный интернет',
+            speed: '100',
+            price: '475',
+        },
+        {
+            title: '«КОСМОС. <br> АКЦИЯ 300»',
+            text: 'Оптимальный вариант для сёрфинга',
+            speed: '300',
+            price: '625',
+        },
+        {
+            title: '«КОСМОС. <br> АКЦИЯ 500»',
+            text: 'Максимальная скорость. Максимальный интернет',
+            speed: '500',
+            price: '725',
+        }
+    ]
+
+section.tariffs
+    .tariffs-sticker(style='background-image: url(img/tariffs/sticker.svg)')
+        .tariffs-sticker-wrap
+            .tariffs-sticker-text при переходе от другого провайдера
+            .tariffs-sticker-value 50%
+            .tariffs-sticker-small Скидка
+    .tariffs-words
+        picture
+            source(srcset='img/tariffs/words.svg' media='(min-width: 7200px)')
+            img(src='img/tariffs/words-360.svg' alt='')
+    img.tariffs-word(src='img/tariffs/word.svg' alt='')
+
+    .container
+        h2.tariffs-title Выгодные
+            br
+            |
+            | тарифные планы в 
+            span Иркутске
+                +svg('sprite.svg#nav')
+        .tariffs-buttons.swiper
+            .swiper-wrapper
+                .swiper-slide.tariffs-btn Интернет + ТВ
+                .swiper-slide.tariffs-btn.active Домашний интернет
+                .swiper-slide.tariffs-btn Видеонаблюдение
+        .tariffs-slider.swiper
+            .swiper-wrapper
+              for item in tariffsList
+                  +tariffsItem(item)

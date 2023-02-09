@@ -1,0 +1,22 @@
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+
+h1, h2 {
+  font-size: 56px;
+  line-height: 110%;
+  @media(max-width: 1819px) {
+    font-size: 52px;
+    line-height: 115%;
+  }
+  @media(max-width: 1279px) {
+    font-size: 42px;
+  }
+  @media(max-width: 959px) {
+    font-size: 36px;
+  }
+  @media(max-width: 719px) {
+    font-size: 29px;
+    line-height: 135%;
+  }
+}

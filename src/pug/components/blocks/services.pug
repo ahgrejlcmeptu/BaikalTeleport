@@ -1,0 +1,42 @@
+mixin servicesItem(props)
+    .services-item.swiper-slide
+        .services-item-img
+            img(src='img/services/' + props.img + '.png')
+        h6.services-item-title!= props.title
+        .services-item-text
+            p!= props.text
+            .services-item-btn
+                a.btn.btn-green(href='#')
+                    span подробнее
+-
+    var servicesList = [
+        {
+            title: 'Проводной <br> и спутниковый интернет',
+            text: 'Подключаем высокоскоростной интернет в городе и в крайних районах по всей области',
+            img: '1'
+        },
+        {
+            title: 'Телевидение <br> для всей семьи',
+            text: 'Предоставляем качественное ТВ с огромным количеством каналов и 4 кинотеатрами ',
+            img: '2'
+        },
+        {
+            title: 'Видеонаблюдение <br> высокого разрешения ',
+            text: 'Подберем оборудование и произведем его монтаж в короткие сроки',
+            img: '3'
+        },
+        {
+            title: 'Услуги для бизнеса <br> и предпринимателей',
+            text: 'Скоростной интернет по выгодным тарифам. Подключение касс, телефонии и видеонаблюдения',
+            img: '4'
+        }
+    ]
+
+section.services
+    .container
+        .services-slider.swiper
+            .swiper-wrapper
+                for item in servicesList
+                    +servicesItem(item)
+
+

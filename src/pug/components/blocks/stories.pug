@@ -1,0 +1,29 @@
+mixin storiesItem(props)
+    .stories-item.swiper-slide
+        .stories-item-image
+            img(src='img/stories/' + props.img + '.jpg')
+        .stories-item-name!= props.name
+        .stories-item-city!=props.city
+
+-
+  var storiesList = [
+      {img: '1', name: 'Игорь Стёпин', city: 'г. Иркутск'},
+      {img: '2', name: 'Ирина Колина', city: 'п. Олха'},
+      {img: '3', name: 'Вера Сысоева', city: 'д. Куда'},
+      {img: '4', name: 'Вера Рубанова', city: 'г. Иркутск'},
+      {img: '5', name: 'Поликарп Елгин', city: 'п. Хомутово'},
+      {img: '6', name: 'Сергей Анисимов', city: 'д. Куда'},
+      {img: '7', name: 'Игорь Стёпин', city: 'г. Ангарск'}
+  ]
+
+section.stories
+    .container
+        h2.stories-title Вот, что говорят клиенты о нас в социальных сетях
+        .stories-slider.swiper
+            .swiper-wrapper
+                a.stories-item.swiper-slide(href='#' target='_blank' style='--color: #307EDA;')
+                    .stories-item-image
+                        //img(src='img/stories/' + props.img + '.jpg')
+                    .stories-item-name Отправить свой отзыв
+                for item in storiesList
+                  +storiesItem(item)
