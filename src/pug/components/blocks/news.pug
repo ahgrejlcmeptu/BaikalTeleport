@@ -1,0 +1,24 @@
+mixin newsItem(props)
+    a.news-item(href='#')
+        .news-item-img
+            img(src='img/news/' + props.img + '.png' alt= props.name)
+        .news-item-name!= props.name
+        .news-item-date!= props.date
+
+-
+    var newsList = [
+        {img: '1', name: 'Акция! 0 рублей первый месяц', date: '21.12.2022'},
+        {img: '2', name: 'Новые подключения в СНТ "Спутник"', date: '03.10.2022'},
+        {img: '3', name: 'Новые подключения в ДНТ "Атлас"', date: '05.11.2022'},
+        {img: '4', name: 'Акция! ТВ 30 дней бесплатно', date: '05.12.2022'}
+    ]
+
+section.news
+    .container.f.f-ac.f-w
+        h2.news-title Новости и акции
+        .news-btn
+            a.btn(href='#')
+                span смотреть все
+        .news-list.f.f-w
+            for item in newsList
+              +newsItem(item)

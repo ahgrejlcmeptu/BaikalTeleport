@@ -1,0 +1,61 @@
+mixin ratingItem(props)
+    .rating-item.swiper-slide
+        .rating-item-logo
+            img(src='img/rating/' + props.img + '.png')
+        .rating-item-rows
+            .rating-item-span Рейтинг: 
+                span= props.rating
+            .rating-item-span Отзывов: 
+                span= props.reviews
+        .rating-item-stars
+            .rating-item-star
+                +svg('sprite.svg#star')
+                .rating-item-star-active
+                    +svg('sprite.svg#star')
+            .rating-item-star
+                +svg('sprite.svg#star')
+                .rating-item-star-active
+                    +svg('sprite.svg#star')
+            .rating-item-star
+                +svg('sprite.svg#star')
+                .rating-item-star-active
+                    +svg('sprite.svg#star')
+            .rating-item-star
+                +svg('sprite.svg#star')
+                .rating-item-star-active
+                    +svg('sprite.svg#star')
+            .rating-item-star
+                +svg('sprite.svg#star')
+                .rating-item-star-active
+                    +svg('sprite.svg#star')
+
+-
+    var ratingList = [
+        {
+            img: '1',
+            rating: '3,6',
+            reviews: '95'
+        },
+        {
+            img: '2',
+            rating: '3,2',
+            reviews: '124'
+        },
+        {
+            img: '3',
+            rating: '3,1',
+            reviews: '64'
+        },
+        {
+            img: '4',
+            rating: '1,3',
+            reviews: '0'
+        }
+    ]
+
+section.rating
+    .container
+        .rating-slider.swiper
+            .swiper-wrapper
+              for item in ratingList
+                  +ratingItem(item)

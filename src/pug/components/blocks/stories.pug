@@ -23,7 +23,7 @@ section.stories
             .swiper-wrapper
                 a.stories-item.swiper-slide(href='#' target='_blank' style='--color: #307EDA;')
                     .stories-item-image
-                        //img(src='img/stories/' + props.img + '.jpg')
-                    .stories-item-name Отправить свой отзыв
+                        img(src='img/stories/vk.svg')
+                    .stories-item-name!= 'Отправить <br> свой отзыв'
                 for item in storiesList
                   +storiesItem(item)

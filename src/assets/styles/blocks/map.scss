@@ -1,0 +1,52 @@
+.home-map {
+  position: relative;
+  //overflow: hidden;
+
+  &-content {
+    border-radius: 64px;
+    max-width: 1820px;
+    //max-width: calc(100% - 100px);
+    margin: 0 auto;
+    overflow: hidden;
+    height: 810px;
+    background: #aaa;
+    @media(max-width: 1279px) {
+      height: 609px;
+      border-right: 48px;
+    }
+    @media(max-width: 959px) {
+      height: 465px;
+      border-radius: 25px;
+    }
+    @media(max-width: 719px) {
+      height: 568px;
+      border-radius: 40px;
+    }
+  }
+
+  &-bg {
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 1411px;
+    overflow: hidden;
+    top: -328px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+[class*=copyrights-pane] {
+  display: none !important;
+}
+
+[class*=ymaps-2][class*=-ground-pane] {
+  filter: grayscale(100%);
+}

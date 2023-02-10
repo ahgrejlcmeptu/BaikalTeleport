@@ -1,0 +1,37 @@
+section.subscription
+    .subscription-bg
+        img(src='img/subscription/bg.svg')
+    .container
+        .subscription-form
+            form.page-form(action='#')
+                .page-form-send
+                    h2.subscription-title Подписка на нашу новостную рассылку
+                    p.subscription-text Узнавайте о выгодных акциях первыми, участвуйте в розыгрышах призов и будьте в курсе технических работ
+                    .subscription-inputs
+                        .subscription-select
+                            .subscription-select-header.f.f-ac
+                                span Телефон
+                                +svg('sprite.svg#select')
+                            .subscription-select-body
+                                .subscription-select-item.active
+                                    span Телефон
+                                .subscription-select-item
+                                    span E-mail
+
+                        .subscription-input
+                            input(type='tel' name='phone' placeholder='Введите номер')
+
+                            button.btn.btn-green(type='submit')
+                                span Подписаться
+
+                    .subscription-politic
+                        label.input-check.input-check-required
+                            input(type='checkbox' name='' checked)
+                            span.f
+                                .input-check-box.circle
+                                .input-check-text Согласен с условиями пользовательского соглашения и принимаю его
+
+
+                .page-form-ok
+                    h2.subscription-title.big Новостная рассылка подключена!
+                    p.subscription-text Теперь вы не пропустите ни одной важной новости

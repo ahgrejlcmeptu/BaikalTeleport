@@ -12,6 +12,11 @@
   @media(max-width: 719px) {
     margin-top: 110px;
   }
+
+  .container {
+    overflow: hidden;
+  }
+
   &-title {
     font-size: 32px;
     line-height: 137%;
@@ -39,12 +44,34 @@
   }
 
   &-item {
-    width: 126px;
+    --size: 126px;
+    width: auto;
+    //width: var(--size);
     margin-right: 28px;
     text-align: center;
     font-weight: 300;
     line-height: 155%;
     letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media(max-width: 1819px) {
+      margin-right: 23px;
+    }
+    @media(max-width: 1279px) {
+      margin-right: 15px;
+      --size: 98px;
+    }
+    @media(max-width: 959px) {
+      --size: 104px;
+      margin-right: 17px;
+    }
+    @media(max-width: 719px) {
+      --size: 82px;
+      margin-right: 24px;
+    }
+
     @media(hover) {
       &:hover {
         .stories-item-image {
@@ -63,12 +90,21 @@
     &-image {
       transition: .3s background;
       width: 100%;
-      height: 126px;
+      height: var(--size);
       border-radius: 25px;
       background: var(--color, #F5F5F7);
       margin-bottom: 12px;
       position: relative;
       z-index: 1;
+      @media(max-width: 1279px) {
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      @media(max-width: 719px) {
+        border-radius: 16px;
+        margin-bottom: 8px;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -95,11 +131,32 @@
       font-size: 15px;
       color: #1A1B1E;
       opacity: 0.8;
+      line-height: 155%;
+      white-space: nowrap;
+      @media(max-width: 1279px) {
+        font-size: 13px;
+      }
+      @media(max-width: 959px) {
+        font-size: 14px;
+      }
+      @media(max-width: 719px) {
+        font-size: 12px;
+      }
     }
     &-city {
+      line-height: 155%;
       color: #939393;
       opacity: 0.8;
       font-size: 13px;
+      @media(max-width: 1279px) {
+        font-size: 10px;
+      }
+      @media(max-width: 959px) {
+        font-size: 11px;
+      }
+      @media(max-width: 719px) {
+        font-size: 10px;
+      }
     }
   }
 }
