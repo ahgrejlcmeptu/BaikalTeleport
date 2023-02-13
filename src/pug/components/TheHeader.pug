@@ -14,14 +14,34 @@ header.header
         .header-center.f.f-ac.f-js
             .header-nav.f
                 nav.f
-                    a.header-nav-link(href='#') Для бизнеса
-                        +svg('sprite.svg#nav')
-                    a.header-nav-link(href='#') Для дома
-                        +svg('sprite.svg#nav')
-                    a.header-nav-link(href='#') Помощь
-                    a.header-nav-link(href='#') Задать вопрос
-                    a.header-nav-link(href='#') Войти
-                a.header-nav-link.hidden(href='#') Ещё +
+                    .header-nav-link
+                        a Для бизнеса
+                            +svg('sprite.svg#nav')
+                        .dialog
+                            a.dialog-link(href='#') Высокоскоростной интернет
+                            a.dialog-link(href='#') Интерактивное ТВ
+                            a.dialog-link(href='#') Видеонаблюдение
+
+                    .header-nav-link
+                        a Для дома
+                            +svg('sprite.svg#nav')
+                        .dialog
+                            a.dialog-link(href='#') Высокоскоростной интернет
+                            a.dialog-link(href='#') Интерактивное ТВ
+                            a.dialog-link(href='#') Видеонаблюдение
+
+                    .header-nav-link
+                        a(href='#') Помощь
+                    .header-nav-link
+                        a(href='#') О нас
+                    .header-nav-link
+                        a(href='#') Войти
+                .header-nav-link Ещё +
+                    .dialog
+                        a.dialog-link(href='#') Новости и акции
+                        a.dialog-link(href='#') Контакты
+                        a.dialog-link(href='#') Политика конфиденциальности
+                        a.dialog-link(href='#') Оферта
 
             .header-social
                 .social
@@ -39,22 +59,48 @@ header.header
                     .social-link
                         +svg('sprite.svg#phone')
                     span +7 3952 56 0000
-            .header-city
-                a.header-nav-link(href='#') Иркутск
-                    +svg('sprite.svg#nav')
+            .header-city.js-city
+                .social-link.js-city-open
+                    +svg('sprite.svg#pin')
+                .header-nav-link.js-city-open
+                    a(href='#') Иркутск
+                        +svg('sprite.svg#nav')
+                .dialog
+                    a.dialog-link(href='#') Иркутск
+                    a.dialog-link(href='#') Шелехов
+                    a.dialog-link(href='#') Ангарск
+                    a.dialog-link(href='#') Иркутская область
+
         .header-btn
             .btn
                 span.d Подключить интернет
                 span.m Подключиться
         .header-icon._left
             .social-link
-                +svg('sprite.svg#tel')
+                +svg('sprite.svg#phone')
         .header-icon._left
             .social-link
                 +svg('sprite.svg#user')
-        .header-icon
-            .social-link
-                +svg('sprite.svg#message')
+        .header-icon.js-city
+            .social-link.js-city-open
+                +svg('sprite.svg#pin')
+            .dialog
+                a.dialog-link(href='#') Иркутск
+                a.dialog-link(href='#') Шелехов
+                a.dialog-link(href='#') Ангарск
+                a.dialog-link(href='#') Иркутская область
+
         .header-icon
             .social-link
                 +svg('sprite.svg#burger')
+.modal-city
+    .modal-city-name Ваш город
+        |
+        |
+        span Иркутск
+        | ?
+    .modal-city-battons.f
+        .btn.btn-green
+            span  Да
+        .btn.modal-city-change
+            span(data-after=', выбрать другой') Нет

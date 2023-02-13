@@ -9,21 +9,25 @@
   position: relative;
   color: #FFFFFF;
   z-index: 1;
+  height: 434px;
 
   @media(max-width: 1279px) {
     margin-top: 110px;
     border-radius: 60px;
+    padding: 45px 0 55px;
   }
   @media(max-width: 959px) {
     margin-top: 65px;
     background: linear-gradient(69.93deg, #00B1B8 26.38%, #00D9BF 87.49%);
     border-radius: 51px;
     padding: 45px 0 50px;
+    overflow: hidden;
   }
   @media(max-width: 719px) {
     margin-top: 75px;
     border-radius: 56px;
-    padding: 50px 0 380px;
+    padding: 50px 0 360px;
+    height: 800px;
   }
 
   &-title {
@@ -62,6 +66,15 @@
     }
     @media(max-width: 719px) {
       max-width: 90%;
+    }
+  }
+
+  .input-parent.error {
+    .subscription-input input {
+      color: rgba(#FF2323, 0.65);
+    }
+    .subscription-input-error {
+      display: block;
     }
   }
 
@@ -117,13 +130,11 @@
     background: #FFFFFF;
     border: 1px solid #D5E9EA;
     border-radius: 20px;
-    padding-left: 170px;
+    padding-left: 150px;
     padding-right: 185px;
     height: 72px;
     position: relative;
-    @media(max-width: 1279px) {
-      padding-left: 150px;
-    }
+
     @media(max-width: 959px) {
       height: 56px;
       border-radius: 14px;
@@ -161,6 +172,15 @@
         color: rgba(#7A7F88, .65);
       }
     }
+
+    &-error {
+      margin-top: 15px;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 150%;
+      color: #FF2323;
+      display: none;
+    }
   }
 
   &-politic {
@@ -191,7 +211,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 170px;
+    width: 150px;
     z-index: 1;
     color: rgba(#1A1B1E, 0.5);
     @media(min-width: 960px) {
@@ -200,9 +220,6 @@
           display: block;
         }
       }
-    }
-    @media(max-width: 1279px) {
-      width: 150px;
     }
     @media(max-width: 959px) {
       position: static;
@@ -219,13 +236,19 @@
       font-size: 18px;
       line-height: 170%;
       letter-spacing: 0.01em;
+      @media(max-width: 959px) {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 155%;
+        letter-spacing: 0.025em;
+      }
     }
 
     &-header {
       cursor: pointer;
-      gap: 15px;
+      gap: 11px;
       height: 100%;
-      padding-left: 30px;
+      padding-left: 23px;
       @media(max-width: 1279px) {
         padding-left: 20px;
       }
@@ -251,7 +274,7 @@
         width: 100%;
         background: #FFFFFF;
         border-radius: 0px 0px 20px 20px;
-        padding: 25px 30px 15px;
+        padding: 25px 23px 15px;
         @media(max-width: 1279px) {
           padding-left: 20px;
           padding-right: 20px;
@@ -283,10 +306,6 @@
         }
       }
       @media(max-width: 959px) {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 155%;
-        letter-spacing: 0.025em;
         color: #FFFFFF;
         padding: 10px 32px;
         border: 1px solid rgba(255, 255, 255, 0.6);
@@ -347,6 +366,75 @@
         top: -18px;
         left: -118px;
       }
+    }
+  }
+
+  &-phone {
+    position: absolute;
+    bottom: 0;
+    right: 215px;
+    width: 404px;
+    @media(max-width: 1819px) {
+      right: 115px;
+    }
+    @media(max-width: 1279px) {
+      right: 0;
+      transform: scale(.95);
+      transform-origin: 100% 100%;
+    }
+    @media(max-width: 959px) {
+      //width: 309px;
+      right: -20px;
+      transform: scale(.76);
+    }
+    @media(max-width: 719px) {
+      //width: 298px;
+      right: 50%;
+      transform-origin: 50% 100%;
+      transform: translateX(50%) scale(.73);
+    }
+
+    &-message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      img {
+        //left: 0;
+        position: absolute;
+        top: 55px;
+        display: block;
+        right: 50px;
+        transition: .3s transform, .3s opacity;
+        opacity: 0;
+        transform: translate(-40px, var(--height, 100px)) scale(0);
+
+        &.active {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        &.open {
+          transform: translate(-50px, var(--height,  100px)) scale(1);
+          opacity: 1;
+        }
+
+        &.close {
+          transform: translate(0, 0) scale(0);
+        }
+
+        &.move {
+          transform: translate(0, 0) scale(1);
+        }
+
+
+      }
+    }
+
+    .phone {
+      display: block;
+      width: 100%;
     }
   }
 }

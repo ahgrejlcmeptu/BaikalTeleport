@@ -44,11 +44,33 @@
       font-size: 32px;
     }
 
-    span {
+    &-wrap {
+      display: inline-block;
+      position: relative;
+      &.active {
+        .tariffs-city {
+          opacity: 1;
+          visibility: visible;
+        }
+        .tariffs-title-btn {
+          color: #315F73;
+          &:before {
+            border-color: rgba(49, 95, 115, 0.4);
+          }
+          svg {
+            stroke: #315F73;
+            transform: rotateX(180deg);
+          }
+        }
+      }
+    }
+
+    &-btn {
       font-weight: 400;
       position: relative;
       display: inline-flex;
       align-items: center;
+      cursor: pointer;
 
       &:before {
         border-bottom: 3px dashed rgba(255, 255, 255, 0.4);
@@ -120,7 +142,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s background, .3s color, .3s border;
 
+    @media(hover) {
+      &:hover {
+        background: rgba(255, 255, 255, 0.31);;
+      }
+    }
     &.active {
       background: #FFFFFF;
       border-color: #fff;
@@ -542,6 +570,73 @@
       width: 117px;
       top: 30px;
       left: 170px;
+    }
+  }
+
+  &-city {
+    z-index: 2;
+    position: absolute;
+    top: 100%;
+    margin-top: 20px;
+    left: 0;
+    background: #FFFFFF;
+    border: 1px solid #D5E9EA;
+    box-shadow: 0px 0px 22px rgba(42, 64, 65, 0.09);
+    border-radius: 20px;
+    padding: 14px;
+    min-height: 240px;
+    width: 404px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s visibility, .3s opacity;
+
+    &-input {
+      position: relative;
+
+      input {
+        outline: none;
+        display: block;
+        border: 1px solid #E3E3E3;
+        border-radius: 11px;
+        height: 63px;
+        padding-left: 13px;
+        padding-right: 140px;
+        width: 100%;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 170%;
+        letter-spacing: 0.01em;
+        color: #1A1B1E;
+      }
+
+      .btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+        width: 120px;
+        border-radius: 10px;
+        font-size: 14px;
+        span {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-list {
+      margin-top: 20px;
+      gap: 7px 0;
+    }
+    &-link {
+      padding: 0 12px;
+      width: 50%;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 133.5%;
+      letter-spacing: 0.01em;
+      color: #7A7F88;
     }
   }
 }

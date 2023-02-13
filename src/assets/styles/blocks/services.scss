@@ -70,6 +70,9 @@
       width: 233px;
       height: 104px;
       position: relative;
+      @media(max-width: 719px) {
+        width: 100%;
+      }
       img {
         position: absolute;
         bottom: 0;

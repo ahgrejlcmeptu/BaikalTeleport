@@ -120,6 +120,7 @@ body {
   &-text {
     small {
       font-size: 0.68em;
+      margin-bottom: -0.2em;
     }
   }
 }
@@ -137,6 +138,7 @@ body {
     border-radius: 50%;
     background: #F4F4F4;
     transition: .3s background;
+    --color: #8F8F8F;
     @media(hover) {
       &:hover {
         background: #29E4C3;
@@ -152,8 +154,8 @@ body {
       display: block;
       width: 100%;
       height: 100%;
-      fill: #8F8F8F;
-      stroke: #8F8F8F;
+      fill: var(--color);
+      stroke: var(--color);
     }
   }
 }
@@ -180,5 +182,12 @@ body {
     left: 0;
     opacity: 1;
     visibility: hidden;
+  }
+}
+
+.tabs-item {
+  display: none;
+  &.active {
+    display: block;
   }
 }

@@ -1,5 +1,10 @@
 section.main
     .container
-        h1.main-title!= 'Связь и интернет в каждый дом <br> или офис, где бы вы не находились!'
+        h1.main-title!= 'Связь и интернет в каждый дом <br> или офис, где бы вы не находились!'
         .main-description
             p!= 'Помогаем людям и бизнесу на протяжении 22 лет быть <a href="#">online</a>. Предоставляем бесперебойные <a href="#">услуги связи</a> и подключаем к сети даже в самых отдаленных районах Иркутской области\n'
+        include ../blocks/coverage
+    .main-bg
+        picture
+            source(srcset='img/main/bg.png' media='(min-width: 720px)')
+            img(src='img/main/bg-360.png')

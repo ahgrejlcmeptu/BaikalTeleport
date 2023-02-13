@@ -1,28 +1,47 @@
 section.subscription
     .subscription-bg
         img(src='img/subscription/bg.svg')
+    .subscription-phone
+        img.phone(src='img/subscription/phone.png')
+        .subscription-phone-message.active
+            img.msg-1.active(src='img/subscription/m-1.png' alt='')
+            img.msg-2(src='img/subscription/m-2.png' alt='')
+            img.msg-3(src='img/subscription/m-3.png' alt='')
     .container
         .subscription-form
             form.page-form(action='#')
                 .page-form-send
                     h2.subscription-title Подписка на нашу новостную рассылку
                     p.subscription-text Узнавайте о выгодных акциях первыми, участвуйте в розыгрышах призов и будьте в курсе технических работ
-                    .subscription-inputs
-                        .subscription-select
-                            .subscription-select-header.f.f-ac
-                                span Телефон
-                                +svg('sprite.svg#select')
-                            .subscription-select-body
-                                .subscription-select-item.active
+                    .input-parent
+                        .subscription-inputs
+                            .subscription-select
+                                .subscription-select-header.f.f-ac
                                     span Телефон
-                                .subscription-select-item
-                                    span E-mail
+                                    +svg('sprite.svg#select')
+                                .subscription-select-body
+                                    .subscription-select-item(
+                                        data-type='tel'
+                                        data-name='tel'
+                                        data-placeholder='Введите номер'
+                                        data-error='Некорректно введён номер'
+                                        data-required='validatePhone')
+                                        span Телефон
+                                    .subscription-select-item(
+                                        data-type='email'
+                                        data-name='mail'
+                                        data-placeholder='Введите e-mail'
+                                        data-error='Некорректно введён e-mail'
+                                        data-required='validateEmail')
+                                        span E-mail
 
-                        .subscription-input
-                            input(type='tel' name='phone' placeholder='Введите номер')
+                            .subscription-input
+                                input(type='tel' name='tel' placeholder='Введите номер' data-required='validatePhone')
 
-                            button.btn.btn-green(type='submit')
-                                span Подписаться
+                                button.btn.btn-green(type='submit')
+                                    span Подписаться
+
+                        .subscription-input-error Некорректно введён телефон
 
                     .subscription-politic
                         label.input-check.input-check-required

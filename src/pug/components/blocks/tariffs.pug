@@ -52,7 +52,7 @@ mixin tariffsItem(props)
         }
     ]
 
-section.tariffs
+section.tariffs.tabs-block
     .tariffs-sticker(style='background-image: url(img/tariffs/sticker.svg)')
         .tariffs-sticker-wrap
             .tariffs-sticker-text при переходе от другого провайдера
@@ -68,15 +68,37 @@ section.tariffs
         h2.tariffs-title Выгодные
             br
             |
-            | тарифные планы в 
-            span Иркутске
-                +svg('sprite.svg#nav')
+            | тарифные планы в
+            .tariffs-title-wrap
+                .tariffs-title-btn Иркутске
+                    +svg('sprite.svg#nav')
+                .tariffs-city
+                    .tariffs-city-input
+                        input(type='text' name='city' placeholder="Найти")
+                        .btn.btn-orange
+                            span найти
+                    .tariffs-city-list.f.f-w
+                        a.tariffs-city-link(href='#') Шелехов
+                        a.tariffs-city-link(href='#') Мегет
+                        a.tariffs-city-link(href='#') Ангарск
+                        a.tariffs-city-link(href='#') Максимовщина
+                        a.tariffs-city-link(href='#') Хомутово
+                        a.tariffs-city-link(href='#') Патроны
+
         .tariffs-buttons.swiper
             .swiper-wrapper
-                .swiper-slide.tariffs-btn Интернет + ТВ
-                .swiper-slide.tariffs-btn.active Домашний интернет
-                .swiper-slide.tariffs-btn Видеонаблюдение
-        .tariffs-slider.swiper
+                .swiper-slide.tariffs-btn.tabs-btn.active Интернет + ТВ
+                .swiper-slide.tariffs-btn.tabs-btn Домашний интернет
+                .swiper-slide.tariffs-btn.tabs-btn Видеонаблюдение
+        .tariffs-slider.tabs-item.swiper.active
             .swiper-wrapper
               for item in tariffsList
+                  +tariffsItem(item)
+        .tariffs-slider.tabs-item.swiper
+            .swiper-wrapper
+              for item in tariffsList.slice(1)
+                  +tariffsItem(item)
+        .tariffs-slider.tabs-item.swiper
+            .swiper-wrapper
+              for item in tariffsList.slice(2)
                   +tariffsItem(item)

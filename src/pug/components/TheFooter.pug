@@ -41,15 +41,30 @@ footer.footer
 
             .footer-nav
                 .container.f.f-js.f-w
-                    a.footer-nav-link(href='#') Для дома
-                        +svg('sprite.svg#nav')
-                    a.footer-nav-link(href='#') Для бизнеса
-                        +svg('sprite.svg#nav')
-                    a.footer-nav-link(href='#') Новости и акции
-                    a.footer-nav-link(href='#') Помощь
-                    a.footer-nav-link(href='#') О нас
-                    a.footer-nav-link(href='#') Личный кабинет
-                    a.footer-nav-link(href='#') Оферта
+                    .footer-nav-link
+                        a Для дома
+                            +svg('sprite.svg#nav')
+                        .dialog
+                            a.dialog-link(href='#') Высокоскоростной интернет
+                            a.dialog-link(href='#') Интерактивное ТВ
+                            a.dialog-link(href='#') Видеонаблюдение
+                    .footer-nav-link
+                        a Для бизнеса
+                            +svg('sprite.svg#nav')
+                        .dialog
+                            a.dialog-link(href='#') Высокоскоростной интернет
+                            a.dialog-link(href='#') Интерактивное ТВ
+                            a.dialog-link(href='#') Видеонаблюдение
+                    .footer-nav-link
+                        a(href='#') Новости и акции
+                    .footer-nav-link
+                        a(href='#') Помощь
+                    .footer-nav-link
+                        a(href='#') О нас
+                    .footer-nav-link
+                        a(href='#') Личный кабинет
+                    .footer-nav-link
+                        a(href='#') Оферта
         .footer-bottom
             .container.f.f-w.f-js
                 p!= 'www.bteleport.ru - официальный сайт ЗАО "Байкал Телепорт" (КПП: 380801001, ОГРН: 1023801534261) Лицензия №164342 от "07" мая 2018г., Лицензия №135090 от "31" октября 2015г., Лицензия №135136 от "28" августа 2015г. Адрес: Российская Федерация, 664011, г. Иркутск, ул. Некрасова, д. 14, 3 этаж. Запрещается использование любых материалов сайта на других ресурсах без согласования с администрацией сайта. Продолжая использовать наш сайт, вы даете согласие на обработку файлов cookies и других пользовательских данных, в соответствии с Политикой конфиденциальности. С политикой обработки персональных данных вы можете ознакомиться <a href="#" target="_blank">здесь</a>. © 2015-2021 Все права защищены.'
