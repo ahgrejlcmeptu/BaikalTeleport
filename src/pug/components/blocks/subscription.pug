@@ -2,8 +2,8 @@ section.subscription
     .subscription-bg
         img(src='img/subscription/bg.svg')
     .subscription-phone
-        img.phone(src='img/subscription/phone.png')
-        .subscription-phone-message.active
+        img.phone._anim-items._anim-top(src='img/subscription/phone.png')
+        .subscription-phone-message._anim-items
             img.msg-1.active(src='img/subscription/m-1.png' alt='')
             img.msg-2(src='img/subscription/m-2.png' alt='')
             img.msg-3(src='img/subscription/m-3.png' alt='')
@@ -45,7 +45,7 @@ section.subscription
 
                     .subscription-politic
                         label.input-check.input-check-required
-                            input(type='checkbox' name='' checked)
+                            input(type='checkbox' name='politic' checked)
                             span.f
                                 .input-check-box.circle
                                 .input-check-text Согласен с условиями пользовательского соглашения и принимаю его

@@ -1,5 +1,10 @@
 mixin storiesItem(props)
-    .stories-item.swiper-slide
+    .stories-item.swiper-slide(
+        data-myGallery='talk'
+        data-src='img/stories/3-big.png'
+        data-option='talk'
+        data-video= props.video
+    )
         .stories-item-image
             img(src='img/stories/' + props.img + '.jpg')
         .stories-item-name!= props.name

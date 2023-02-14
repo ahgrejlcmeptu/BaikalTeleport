@@ -370,6 +370,7 @@
   }
 
   &-phone {
+    overflow: hidden;
     position: absolute;
     bottom: 0;
     right: 215px;
@@ -399,6 +400,13 @@
       top: 0;
       left: 0;
       width: 100%;
+
+      opacity: 0;
+      &._active {
+        opacity: 1;
+        transition-delay: .3s;
+        transition: .3s;
+      }
 
       img {
         //left: 0;

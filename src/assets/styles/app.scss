@@ -3,6 +3,7 @@
 @import "layout";
 @import "titles";
 @import "swiper";
+@import "animation";
 
 @import "ui/btns";
 @import "ui/inputs";
@@ -12,3 +13,7 @@
 @import "footer";
 
 @import "blocks/app";
+@import "popup/popup";
+@import "popup/connection";
+@import "popup/rating";
+@import "popup/stories";

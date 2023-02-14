@@ -1,0 +1,76 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+
+  &.open {
+    display: block;
+    animation-name: fadeIn;
+  }
+
+  &.close {
+    animation-name: fadeOut;
+    animation-delay: .3s;
+  }
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+  }
+
+  &-backdrop {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &-close {
+    z-index: 2;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    --stroke: #A5A8AF;
+    position: absolute;
+    top: 85px;
+    right: 75px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--stroke);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

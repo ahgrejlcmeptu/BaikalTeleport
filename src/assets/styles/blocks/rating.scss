@@ -90,6 +90,13 @@
       }
     }
 
+    &-text {
+      display: none;
+      font-size: 15px;
+      line-height: 156.5%;
+      color: #424D50;
+    }
+
     &-rows {
       display: flex;
       justify-content: center;
@@ -144,6 +151,7 @@
         width: var(--width);
         height: var(--height);
         fill: rgba(#7A7F88, .35);
+        display: block;
       }
     }
     &-star {

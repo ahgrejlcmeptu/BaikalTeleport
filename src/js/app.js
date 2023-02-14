@@ -1,17 +1,33 @@
 import {anchors} from "./anchors";
 import {tabsInit} from "./utils";
 import {sendForm, maskPhone} from "./form";
+import {openPopup} from "./modal";
 
 import "./ratingStars"
 import "./map"
 import "./swiper"
 import "./city"
+import "./animation";
+import "./modal"
+import "./myGallery"
 
 tabsInit()
 
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a')
+  const modal = e.target.closest('[data-modal]')
   if (link) anchors(e, link.hash)
+
+  if (modal) {
+    e.preventDefault()
+    if (modal.dataset.modal === 'popup-rating') {
+      if (innerWidth < 1280) return;
+      const img = modal.dataset.img
+      const modalImg = document.querySelector('.popup-rating-left img')
+      if (modalImg) modalImg.src = img
+    }
+    openPopup(modal)
+  }
 })
 
 const inputPhone = document.querySelectorAll('input[name="phone"]');
@@ -29,6 +45,7 @@ if (pageForm.length) {
 }
 
 subscriptionMsg()
+
 function subscriptionMsg() {
   const msgWrap = document.querySelector('.subscription-phone-message')
   if (!msgWrap) return;
@@ -38,7 +55,7 @@ function subscriptionMsg() {
   let times = 0
 
   requestAnimationFrame(function moveMsg() {
-    if (msgWrap.classList.contains('active')) {
+    if (msgWrap.classList.contains('_active')) {
       times++
       msgWrap.style.setProperty('--height', `${msg[index].clientHeight}px`)
     }
@@ -46,11 +63,11 @@ function subscriptionMsg() {
     if (times > 200) {
       msg[next].classList.add('open')
     }
-    if (times > 300) {
+    if (times > 250) {
       msg[index].classList.add('close')
       msg[next].classList.add('move')
     }
-    if (times > 350) {
+    if (times > 300) {
       msg[index].classList.remove('close', 'active', 'move', 'open')
       msg[next].classList.add('active')
       msg[next].classList.remove('close', 'move', 'open')

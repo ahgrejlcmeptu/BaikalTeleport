@@ -589,6 +589,10 @@
     opacity: 0;
     visibility: hidden;
     transition: .3s visibility, .3s opacity;
+    @media(max-width: 719px) {
+      width: 330px;
+      min-height: 208px;
+    }
 
     &-input {
       position: relative;
@@ -607,6 +611,11 @@
         line-height: 170%;
         letter-spacing: 0.01em;
         color: #1A1B1E;
+        @media(max-width: 719px) {
+          height: 46px;
+          font-size: 14px;
+          padding-right: 110px;
+        }
       }
 
       .btn {
@@ -617,6 +626,13 @@
         width: 120px;
         border-radius: 10px;
         font-size: 14px;
+        @media(max-width: 719px) {
+          top: 4px;
+          right: 4px;
+          bottom: 4px;
+          width: 100px;
+          font-size: 12px;
+        }
         span {
           &:before {
             display: none;
@@ -628,6 +644,9 @@
     &-list {
       margin-top: 20px;
       gap: 7px 0;
+      @media(max-width: 719px) {
+        margin-top: 15px;
+      }
     }
     &-link {
       padding: 0 12px;
@@ -637,6 +656,9 @@
       line-height: 133.5%;
       letter-spacing: 0.01em;
       color: #7A7F88;
+      @media(max-width: 719px) {
+        font-size: 14px;
+      }
     }
   }
 }

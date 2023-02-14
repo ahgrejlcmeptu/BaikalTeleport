@@ -1,0 +1,54 @@
+.popup#popup-connection
+    .popup-backdrop
+    .popup-content.js-backdrop
+        .popup-connection
+            .popup-close.js-close
+                +svg('sprite.svg#close')
+            form.page-form(action='#')
+                input(type='hidden' name='form-name')
+                .page-form-send
+                    .popup-connection-title Заявка на подключение
+                    p.popup-connection-text Для всех новых абонентов предоставляется тестовый период на 1 месяц!
+                    .popup-connection-inputs
+                        .input-parent.input-item
+                            input(type='text' name='name' placeholder='Ваше имя')
+                        .input-parent.input-item
+                            input(type='email' name='email' placeholder='Ваш e-mail' data-required='validatePhone')
+                            .input-item-error Некорректно введён e-mail
+                        .input-parent.input-item
+                            input(type='tel' name='phone' placeholder='+7 (___) ___ __ __' data-required='validatePhone')
+                            .input-item-error Некорректно введён номер телефона
+                        .input-parent.input-item
+                            textarea(name='comment' placeholder='СНТ “Новое”, ул. Пушкина, 8')
+                    .popup-connection-services.required-group
+                        .popup-connection-subtitle Выберите необходимую вам услугу
+                        .popup-connection-services-item
+                            label.input-check
+                                input(type='checkbox' name='Internet' checked)
+                                span.f
+                                    .input-check-box
+                                    .input-check-text Интернет
+
+                        .popup-connection-services-item
+                            label.input-check
+                                input(type='checkbox' name='TV' checked)
+                                span.f
+                                    .input-check-box
+                                    .input-check-text TV
+
+                        .popup-connection-services-item
+                            label.input-check
+                                input(type='checkbox' name='CCTV')
+                                span.f
+                                    .input-check-box
+                                    .input-check-text Видеонаблюдение
+
+                    .popup-connection-submit
+                        button.btn.btn-green(type='submit')
+                            span отправить заявку
+                    .popup-connection-politic
+                        label.input-check.input-check-required
+                            input(type='checkbox' name='politic' checked)
+                            span.f
+                                .input-check-box.circle
+                                .input-check-text Согласен с условиями пользовательского соглашения и принимаю его

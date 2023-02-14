@@ -63,7 +63,7 @@ header.header
                 .social-link.js-city-open
                     +svg('sprite.svg#pin')
                 .header-nav-link.js-city-open
-                    a(href='#') Иркутск
+                    a Иркутск
                         +svg('sprite.svg#nav')
                 .dialog
                     a.dialog-link(href='#') Иркутск
@@ -72,7 +72,7 @@ header.header
                     a.dialog-link(href='#') Иркутская область
 
         .header-btn
-            .btn
+            .btn(data-modal='popup-connection')
                 span.d Подключить интернет
                 span.m Подключиться
         .header-icon._left
@@ -93,6 +93,7 @@ header.header
         .header-icon
             .social-link
                 +svg('sprite.svg#burger')
+
 .modal-city
     .modal-city-name Ваш город
         |
