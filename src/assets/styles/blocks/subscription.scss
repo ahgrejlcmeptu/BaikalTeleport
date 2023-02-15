@@ -404,8 +404,7 @@
       opacity: 0;
       &._active {
         opacity: 1;
-        transition-delay: .3s;
-        transition: .3s;
+        transition: .3s .3s;
       }
 
       img {

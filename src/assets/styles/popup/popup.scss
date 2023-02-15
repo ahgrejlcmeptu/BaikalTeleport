@@ -18,7 +18,29 @@
 
   &.close {
     animation-name: fadeOut;
-    animation-delay: .3s;
+  }
+
+  &-bottom {
+    .popup-content {
+      transform: translateY(100%);
+      animation-fill-mode: both;
+      animation-duration: .2s;
+      animation-timing-function: linear;
+    }
+
+    &.open {
+      .popup-content {
+        animation-name: fadeBottomIn;
+        animation-delay: .2s;
+      }
+    }
+    &.close {
+      animation-delay: .2s;
+      .popup-content {
+        animation-name: fadeBottomOut;
+        animation-delay: 0s;
+      }
+    }
   }
 
   &-content {
@@ -37,6 +59,11 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+
+    &._white {
+      background-color: #fff;
+      background-size: cover;
+    }
   }
 
   &-close {
@@ -53,6 +80,21 @@
       width: 100%;
       height: 100%;
       stroke: var(--stroke);
+    }
+  }
+
+  &-back {
+    width: var(--size, 35px);
+    height: var(--size, 35px);
+    border-radius: 50%;
+    border: 1px solid rgba(#7A7F88, .3);
+    display: flex;
+    svg {
+      margin: auto;
+      display: block;
+      width: 8px;
+      height: 11px;
+      stroke: var(--color, rgba(0,0,0, .46));
     }
   }
 }
@@ -72,5 +114,23 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fadeBottomIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBottomOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
   }
 }

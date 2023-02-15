@@ -91,7 +91,7 @@ header.header
                 a.dialog-link(href='#') Иркутская область
 
         .header-icon
-            .social-link
+            .social-link(data-modal='popup-menu')
                 +svg('sprite.svg#burger')
 
 .modal-city
@@ -105,3 +105,6 @@ header.header
             span  Да
         .btn.modal-city-change
             span(data-after=', выбрать другой') Нет
+
+include popup/menu
+include popup/city

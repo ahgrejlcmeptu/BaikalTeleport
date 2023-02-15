@@ -61,16 +61,8 @@ function openTariffs() {
   })
 
   tariffsCity.oninput = () => {
-    const val = tariffsCity.value
-    tariffsLinks.forEach(link => {
-      if (link.textContent.toLowerCase().indexOf(val.toLowerCase()) === -1) {
-        link.style.display = 'none'
-      } else {
-        link.style.display = null
-      }
-    })
+    filterList(tariffsCity, tariffsLinks)
   }
-
 }
 
 document.addEventListener('mousedown', ({target}) => {
@@ -84,3 +76,24 @@ document.addEventListener('mousedown', ({target}) => {
     tariffsWrap.classList.remove('active')
   }
 })
+
+selectCity()
+function selectCity() {
+  const input = document.querySelector('.popup-city-input input')
+  if (!input) return
+  const links = document.querySelectorAll('.popup-city-link')
+  input.oninput = () => {
+    filterList(input, links)
+  }
+}
+
+function filterList(input, links) {
+  const val = input.value
+  links.forEach(link => {
+    if (link.textContent.toLowerCase().indexOf(val.toLowerCase()) === -1) {
+      link.style.display = 'none'
+    } else {
+      link.style.display = null
+    }
+  })
+}

@@ -165,6 +165,7 @@ import {bodyLock, bodyUnLock} from './utils';
 
         video.onended = () => {
           stopVideo(self)
+          self.slideNext(300)
         }
       }
 
@@ -192,8 +193,5 @@ import {bodyLock, bodyUnLock} from './utils';
       }
     }
 
-    // if (innerWidth < 720) {
-    //   swiperBig.destroy(true, true)
-    // }
   }
 }());

@@ -1,0 +1,84 @@
+.popup.popup-bottom#popup-menu
+    .popup-backdrop._white(style='background-image: url(img/popup.png)')
+    .popup-content.js-backdrop
+        .popup-menu
+            .popup-menu-header.f.f-ac.f-js
+                .popup-menu-title Меню
+                .popup-close.js-close
+                    +svg('sprite.svg#close')
+            .popup-menu-body
+                .popup-menu-city
+                    .popup-menu-city-btn.f.f-ac(data-modal='popup-city')
+                        .social-link
+                            +svg('sprite.svg#pin')
+                        span Иркутск
+                .popup-menu-buttons
+                    .btn.popup-menu-buttons-lk
+                        span войти в личный кабинет
+                    .btn.popup-menu-buttons-call
+                        span Связаться с нами
+
+                .popup-menu-contacts.f.f-dc
+                    a.popup-menu-contacts-phone(href='tel:+7 3952 56 0000') +7 3952 56 0000
+                    a.popup-menu-contacts-phone(href='tel:+7 964 810 80 33') +7 964 810 80 33
+                    a.popup-menu-contacts-mail(href='mailto:office@bteleport.ru') office@bteleport.ru
+                    .social
+                        a.social-link(href='#' target='_blank')
+                            +svg('sprite.svg#vk')
+                        a.social-link(href='#' target='_blank')
+                            +svg('sprite.svg#od')
+                        a.social-link(href='#' target='_blank')
+                            +svg('sprite.svg#wa')
+                        a.social-link(href='#' target='_blank')
+                            +svg('sprite.svg#tg')
+
+
+                ul.popup-menu-nav
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            .social-link
+                                +svg('sprite.svg#business')
+                            span Для бизнеса
+                            .popup-menu-nav-arr
+                                +svg('sprite.svg#nav')
+                        .popup-menu-nav-body
+                            a.popup-menu-nav-link(href='#') Высокоскоростной интернет
+                            a.popup-menu-nav-link(href='#') Видеонаблюдение
+                            a.popup-menu-nav-link(href='#') Телефония
+                            a.popup-menu-nav-link(href='#') Монтаж оборудования
+                            a.popup-menu-nav-link(href='#') Подключение кассового оборудования
+
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            .social-link
+                                +svg('sprite.svg#home')
+                            span Для дома
+                            .popup-menu-nav-arr
+                                +svg('sprite.svg#nav')
+                        .popup-menu-nav-body
+                            a.popup-menu-nav-link(href='#') Высокоскоростной интернет
+                            a.popup-menu-nav-link(href='#') Интерактивное ТВ
+                            a.popup-menu-nav-link(href='#') Видеонаблюдение
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            .social-link
+                                +svg('sprite.svg#help')
+                            span Помощь
+                            .popup-menu-nav-arr
+                                +svg('sprite.svg#nav')
+                        .popup-menu-nav-body
+                            a.popup-menu-nav-link(href='#') Полезные статьи
+                            a.popup-menu-nav-link(href='#') Частые вопросы и ответы на них
+                            a.popup-menu-nav-link(href='#') Документы
+                            a.popup-menu-nav-link(href='#') Задать вопрос
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            span Новости и акции
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            span Календарь технических работ
+                    li
+                        a.popup-menu-nav-item(href='#')
+                            span О нас
+
+

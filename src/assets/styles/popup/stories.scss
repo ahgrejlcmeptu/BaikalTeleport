@@ -52,10 +52,10 @@
       &:before {
         content: '';
         position: absolute;
-        top: -12px;
-        right: -12px;
-        bottom: -12px;
-        left: -12px;
+        top: sizeScreen(-12, 715);
+        right: sizeScreen(-12, 715);
+        bottom: sizeScreen(-12, 715);
+        left: sizeScreen(-12, 715);
         border-radius: 50%;
         z-index: -1;
         background: #F4F4F4;
@@ -67,6 +67,12 @@
       right: 25px;
       width: 18px;
       height: 18px;
+      &:before {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+      }
     }
   }
 
@@ -97,6 +103,9 @@
         &:before {
           opacity: 0;
         }
+      }
+      .popup-stories__video {
+        display: block;
       }
     }
   }
@@ -146,6 +155,20 @@
         max-width: 100%;
         width: auto;
       }
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 

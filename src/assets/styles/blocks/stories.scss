@@ -45,8 +45,8 @@
 
   &-item {
     --size: 126px;
-    width: auto;
-    //width: var(--size);
+    //width: auto;
+    width: var(--size);
     margin-right: 28px;
     text-align: center;
     font-weight: 300;

@@ -48,3 +48,14 @@ window.addEventListener('resize', () => {
     swiperList[key].init()
   }
 })
+
+window.coverageSlider = () => {
+  const coverSlide = document.querySelector('.coverage-modal-slider')
+  if (!coverSlide) return
+
+  new Swiper(coverSlide, {
+    slidesPerView: 'auto',
+    slideDuplicateClass: '-duplicate'
+  });
+}
+coverageSlider()

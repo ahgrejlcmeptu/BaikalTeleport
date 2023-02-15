@@ -1,6 +1,19 @@
 .input-check {
   cursor: pointer;
   display: inline-block;
+  --color: rgba(230, 230, 230, .7);
+  --colorHover: rgba(151, 236, 221, 1);
+  --colorCheck:rgba(0, 201, 165, 1);
+
+  @media(hover) {
+    &:hover {
+      .input-check {
+        &-box {
+          background: var(--colorHover);
+        }
+      }
+    }
+  }
 
   input {
     display: none;
@@ -19,7 +32,8 @@
   }
 
   &-box {
-    background: rgba(#E6E6E6, 0.7);
+    transition: .3s;
+    background: var(--color);
     border-radius: 5px;
     position: relative;
     flex-shrink: 0;
@@ -38,7 +52,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       content: '';
-      background: #00C9A5;
+      background: var(--colorCheck);
       border-radius: 1px;
       width: 10px;
       height: 10px;

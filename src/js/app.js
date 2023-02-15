@@ -7,9 +7,10 @@ import "./ratingStars"
 import "./map"
 import "./swiper"
 import "./city"
-import "./animation";
+import "./animation"
 import "./modal"
 import "./myGallery"
+import "./navigation"
 
 tabsInit()
 
@@ -96,6 +97,8 @@ function subscriptionMsg() {
       if (header) subscriptionSelect.classList.toggle('active')
       if (item) {
         subscriptionSelect.classList.remove('active')
+        const active = document.querySelector('.subscription-select-item.active')
+        if (active) active.classList.remove('active')
         span.textContent = item.querySelector('span').textContent
 
         input.value = ''
@@ -104,6 +107,7 @@ function subscriptionMsg() {
         input.placeholder = item.dataset.placeholder
         input.dataset.required = item.dataset.required
         error.textContent = item.dataset.error
+        item.classList.add('active')
 
         if (input.name === 'tel') {
           mask = maskPhone(input)
@@ -119,3 +123,26 @@ function subscriptionMsg() {
     })
   }
 }());
+
+const coverageInput = document.querySelector('.coverage-input-wrap input')
+const coverageBtn = document.querySelector('.coverage-input-wrap .btn')
+
+if (coverageInput && coverageBtn) {
+  const coverageModal = document.querySelector('.coverage-modal')
+  coverageBtn.onclick = () => {
+    const active = coverageInput.value.length > 2
+    if (!coverageModal) return
+    if (active) {
+      coverageModal.classList.add('active')
+    } else {
+      coverageModal.classList.remove('active')
+    }
+  }
+}
+
+document.addEventListener('mousedown', ({target}) => {
+  const coverageModal = document.querySelector('.coverage-modal')
+  if (!target.closest('.coverage-modal') && coverageModal) {
+    coverageModal.classList.remove('active')
+  }
+})
