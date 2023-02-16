@@ -1,0 +1,41 @@
+mixin givedayItem(props)
+    .giveday-item.swiper-slide
+        .giveday-item-img
+            img(src='img/giveday/' + props.img + '.png')
+        .giveday-item-title!= props.title
+        p.giveday-item-text!= props.text
+
+-
+  var givedayList = [
+      {img: '1', title: 'Оставьте заявку на подключение', text: 'Оператор свяжется с вами для согласования времени выезда  мастера на дом'},
+      {img: '2', title: 'Проверим возможность подключения ', text: 'Рассмотрим заявку на подключение даже в том районе, где нас нет! Поможем всем быть online'},
+      {img: '3', title: 'Проведем оптический кабель в ваш дом', text: 'Специалисты аккуратно проведут кабель до устройства, даже если у вас современный ремонт'},
+      {img: '4', title: 'Подберем оборудование и настроим быстрый интернет', text: 'Подберем подходящий роутер под площадь вашей квартиры, чтобы сеть везде работала стабильно'},
+
+  ]
+
+section.giveday
+    .container
+        h2.giveday-title Дайте нам один день
+            br
+            |
+            | и вы получите супер-быстрый интернет в
+            .tariffs-title-wrap
+                .tariffs-title-btn._black._small Хомутово
+                    +svg('sprite.svg#nav')
+                .tariffs-city
+                    .tariffs-city-input
+                        input(type='text' name='city' placeholder="Найти")
+                        .btn.btn-orange
+                            span найти
+                    .tariffs-city-list.f.f-w
+                        a.tariffs-city-link(href='#') Шелехов
+                        a.tariffs-city-link(href='#') Мегет
+                        a.tariffs-city-link(href='#') Ангарск
+                        a.tariffs-city-link(href='#') Максимовщина
+                        a.tariffs-city-link(href='#') Хомутово
+                        a.tariffs-city-link(href='#') Патроны
+        .giveday-slider.swiper
+            .swiper-wrapper
+                for item in givedayList
+                  +givedayItem(item)

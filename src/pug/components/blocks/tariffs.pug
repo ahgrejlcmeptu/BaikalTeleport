@@ -10,6 +10,22 @@ mixin tariffsItem(props)
             span!= props.speed
                 |  
                 small Мбит/сек
+        if tariffsAdd
+            .tariffs-item-add
+                .tariffs-item-add-title Дополнительно:
+                .tariffs-item-add-item
+                    label.input-check
+                        input(type='checkbox' name='TV')
+                        span.f
+                            .input-check-box.circle
+                            .input-check-text TV
+                .tariffs-item-add-item
+                    label.input-check
+                        input(type='checkbox' name='CCTV')
+                        span.f
+                            .input-check-box.circle
+                            .input-check-text Видеонаблюдение
+
         .tariffs-item-price.f.f-js
             .tariffs-item-value!= props.price
                 small  ₽/мес

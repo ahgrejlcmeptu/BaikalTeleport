@@ -81,10 +81,10 @@ mixin tariffsItem(props)
                     .btn
                         span сравнить тарифы
 
-                .coverage-modal-text Название неверно или населённый пункт ещё не подключен к сетям Байкал Телепорт.
+                .coverage-modal-text.hidden Название неверно или населённый пункт ещё не подключен к сетям Байкал Телепорт.
                     br
                     | Оставьте свои контактные данные и специалист сообщит вам о статусе подключения
-            .coverage-modal-footer
+            .coverage-modal-footer.hidden
                 form.page-form.f(action='#')
                     .input-parent.input-item
                         input(type='text' name='name' placeholder='Имя')

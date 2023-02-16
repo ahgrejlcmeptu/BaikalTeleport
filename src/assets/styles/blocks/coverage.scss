@@ -10,6 +10,14 @@
     gap: 20px;
   }
 
+  &.open {
+    .coverage-input-wrap {
+      input {
+        border: 1px solid #E3E3E3;
+      }
+    }
+  }
+
   &-input {
     width: 50%;
     flex-grow: 1;
@@ -35,7 +43,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: #1A1B1E;
-        border: 1px solid #E3E3E3;
 
         &::placeholder {
           opacity: .32;
@@ -52,6 +59,7 @@
         }
       }
     }
+
     &-btn {
       position: absolute;
       top: 9px;
@@ -169,6 +177,7 @@
       opacity: 1;
       visibility: visible;
     }
+
     @media(max-width: 759px) {
       padding-top: 57px;
     }
@@ -252,6 +261,7 @@
           border-radius: 13px;
         }
       }
+
       .btn {
         font-size: 14px;
         flex-grow: 1;

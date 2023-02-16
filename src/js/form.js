@@ -40,7 +40,6 @@ const validation = {
     }
   },
   validateCheck(input) {
-    console.log(111)
     return false
     const parent = input.closest('.input-parent')
 

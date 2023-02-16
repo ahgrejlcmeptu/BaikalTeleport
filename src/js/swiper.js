@@ -1,7 +1,15 @@
 import Swiper from 'swiper/swiper-bundle';
-import {defaults} from "autoprefixer";
 
-const sliderDefault = ['.services-slider', '.discounts-slider', '.tariffs-slider', '.stories-slider', '.tariffs-buttons']
+const sliderDefault = [
+  '.services-slider',
+  '.discounts-slider',
+  '.tariffs-slider',
+  '.stories-slider',
+  '.tariffs-buttons',
+  '.advantages-slider',
+  '.destination-slider',
+  '.giveday-slider'
+]
 
 sliderDefault.forEach(slide => {
   new Swiper(slide, {

@@ -75,8 +75,38 @@
       display: inline-flex;
       align-items: center;
       cursor: pointer;
+      transition: .3s color;
+      @media(hover) {
+        &:hover {
+          color: #439292;
+          svg {
+            stroke: #439292;
+          }
+          &:before {
+            border-color: #439292;
+          }
+        }
+      }
+
+      &._black {
+        &:before {
+          border-bottom: 1px dashed #424D50;
+        }
+        svg {
+          stroke: #1D3945;
+        }
+      }
+      &._small {
+        font-weight: 500;
+        svg {
+          margin-left: 10px;
+          width: 16px;
+          height: 8px;
+        }
+      }
 
       &:before {
+        transition: .3s border;
         border-bottom: 3px dashed rgba(255, 255, 255, 0.4);
         content: '';
         position: absolute;
@@ -94,6 +124,7 @@
       }
 
       svg {
+        transition: .3s stroke;
         margin-left: 20px;
         width: 24px;
         height: 12px;
@@ -175,6 +206,12 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  .tariffs-item {
+    .input-check {
+      --color: hsla(0,0%,90.2%,0.7);
     }
   }
 

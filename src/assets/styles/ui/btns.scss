@@ -42,6 +42,19 @@
     }
   }
 
+  &-stroke {
+    border-color: #00C9A5;
+    color: #424D50;
+
+    @media(hover) {
+      &:hover {
+        background: #FF7223;
+        color: #fff;
+        border-color: #FF7223;
+      }
+    }
+  }
+
   &-orange {
     border-color: #FF7223;
     background: #FF7223;

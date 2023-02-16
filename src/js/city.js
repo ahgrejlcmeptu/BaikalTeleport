@@ -1,6 +1,6 @@
 const headerCity = [...document.querySelectorAll('.js-city')]
 const modalCity = document.querySelector('.modal-city')
-const tariffsWrap = document.querySelector('.tariffs-title-wrap')
+const tariffsWraps = document.querySelectorAll('.tariffs-title-wrap')
 
 headerCity.forEach(item => {
   if (!item) return;
@@ -51,18 +51,20 @@ modalCity.addEventListener('click', ({target}) => {
 openTariffs()
 
 function openTariffs() {
-  const tariffsBtn = tariffsWrap.querySelector('.tariffs-title-btn')
-  const tariffsCity = tariffsWrap.querySelector('.tariffs-city input')
-  const tariffsLinks = tariffsWrap.querySelectorAll('.tariffs-city-link')
-  if (!tariffsWrap) return
+  if (!tariffsWraps.length) return
+  tariffsWraps.forEach(tariffsWrap => {
+    const tariffsBtn = tariffsWrap.querySelector('.tariffs-title-btn')
+    const tariffsCity = tariffsWrap.querySelector('.tariffs-city input')
+    const tariffsLinks = tariffsWrap.querySelectorAll('.tariffs-city-link')
 
-  tariffsBtn.addEventListener('click', () => {
-    tariffsWrap.classList.toggle('active')
+    tariffsBtn.addEventListener('click', () => {
+      tariffsWrap.classList.toggle('active')
+    })
+
+    tariffsCity.oninput = () => {
+      filterList(tariffsCity, tariffsLinks)
+    }
   })
-
-  tariffsCity.oninput = () => {
-    filterList(tariffsCity, tariffsLinks)
-  }
 }
 
 document.addEventListener('mousedown', ({target}) => {
@@ -72,8 +74,9 @@ document.addEventListener('mousedown', ({target}) => {
   if (!target.closest('.popup-city') && modalCity) {
     modalCity.classList.remove('active')
   }
-  if (!target.closest('.tariffs-title-wrap') && tariffsWrap) {
-    tariffsWrap.classList.remove('active')
+  if (!target.closest('.tariffs-title-wrap') && tariffsWraps.length) {
+    const actives = document.querySelectorAll('.tariffs-title-wrap.active')
+    if (actives.length) actives.forEach(active => active.classList.remove('active'))
   }
 })
 

@@ -1,7 +1,11 @@
 .services {
-  overflow: hidden;
   margin-top: 50px;
   padding-top: 50px;
+  overflow: hidden;
+  @media(hover) {
+    padding-bottom: 70px;
+    margin-bottom: -70px;
+  }
   @media(max-width: 1819px) {
     margin-top: 60px;
   }

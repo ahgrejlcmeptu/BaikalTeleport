@@ -4,12 +4,8 @@
   @media(max-width: 1819px) {
     padding-top: 73px;
   }
-  @media(max-width: 1279px) {
-  }
   @media(max-width: 959px) {
     padding-top: 0;
-  }
-  @media(max-width: 719px) {
   }
 
   .container {
@@ -185,7 +181,6 @@
     }
 
     .btn {
-      font-weight: 300;
       font-size: 31px;
       line-height: 143.4%;
       padding: 28px 150px;
@@ -398,13 +393,13 @@
       padding-top: 50px;
     }
     @media(max-width: 1279px) {
-      padding: 40px 0 65px;
+      padding: 40px 0 40px;
     }
     @media(max-width: 959px) {
-      padding: 60px 0 130px;
+      padding: 60px 0 40px;
     }
     @media(max-width: 719px) {
-      padding: 55px 0 60px;
+      padding: 55px 0 40px;
     }
 
     .container {

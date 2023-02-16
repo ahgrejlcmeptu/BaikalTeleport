@@ -76,8 +76,8 @@
       &:hover {
         .stories-item-image {
           background: #00C9A5;
-          &:before {
-            opacity: 1;
+          img {
+            transform: scale(1.1);
           }
         }
       }
@@ -96,6 +96,8 @@
       margin-bottom: 12px;
       position: relative;
       z-index: 1;
+      overflow: hidden;
+      border: 3px solid transparent;
       @media(max-width: 1279px) {
         border-radius: 20px;
         margin-bottom: 10px;
@@ -106,24 +108,11 @@
       }
 
       img {
+        transition: .3s;
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: inherit;
-      }
-
-      &:before {
-        z-index: -1;
-        content: '';
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        bottom: -1px;
-        left: -1px;
-        border-radius: inherit;
-        background: #00C9A5;
-        opacity: 0;
-        transition: .3s opacity;
       }
     }
 

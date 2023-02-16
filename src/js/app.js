@@ -129,12 +129,15 @@ const coverageBtn = document.querySelector('.coverage-input-wrap .btn')
 
 if (coverageInput && coverageBtn) {
   const coverageModal = document.querySelector('.coverage-modal')
+  const coverage = document.querySelector('.coverage')
   coverageBtn.onclick = () => {
     const active = coverageInput.value.length > 2
     if (!coverageModal) return
     if (active) {
+      coverage.classList.add('open')
       coverageModal.classList.add('active')
     } else {
+      coverage.classList.remove('open')
       coverageModal.classList.remove('active')
     }
   }
@@ -144,5 +147,27 @@ document.addEventListener('mousedown', ({target}) => {
   const coverageModal = document.querySelector('.coverage-modal')
   if (!target.closest('.coverage-modal') && coverageModal) {
     coverageModal.classList.remove('active')
+    document.querySelector('.coverage').classList.remove('open')
+  }
+  const questionsActive = document.querySelector('.questions-item.active')
+  if (!target.closest('.questions-item') && questionsActive) {
+    questionsActive.classList.remove('active')
+  }
+})
+
+const questions = [...document.querySelectorAll('.questions-item')]
+questions.forEach(item => {
+  const header = item.querySelector('.questions-item-header')
+  const wrap = item.querySelector('.questions-item-wrap')
+  header.onclick = () => {
+    item.style.setProperty('--height', wrap.clientHeight + 'px')
+
+    if (item.classList.contains('active')) {
+      item.classList.remove('active')
+    } else {
+      const active = document.querySelector('.questions-item.active')
+      if (active) active.classList.remove('active')
+      item.classList.add('active')
+    }
   }
 })

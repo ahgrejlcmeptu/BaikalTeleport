@@ -1,46 +1,114 @@
+#popup-city {
+  .popup-backdrop {
+    @media(min-width: 960px) {
+      background-image: none !important;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
 .popup-city {
-  background: #FFFFFF;
-  border-radius: 40px 40px 0px 0px;
-  margin-top: 30px;
-  width: 100%;
-  min-height: calc(100% - 30px);
-  //overflow: hidden;
-  padding: 25px 20px;
-  //height: auto;
-  height: max-content;
   position: relative;
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 1567px;
+  margin: 100px auto;
+  border-radius: 120px;
+  padding: 40px 180px;
+  height: 790px;
+  max-height: 100%;
+  @media(max-width: 1819px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 86px;
+    height: 663px;
+  }
+  @media(max-width: 1279px) {
+    margin: 85px 0;
+    padding: 35px 30px;
+    border-radius: 78px;
+    height: 555px;
+  }
+  @media(max-width: 959px) {
+    border-radius: 40px 40px 0px 0px;
+
+    margin: 30px 0 0;
+    min-height: calc(100% - 30px);
+    padding: 25px 20px;
+    position: relative;
+    height: max-content;
+    max-height: none;
+  }
 
   .popup-close {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 1px solid rgba(#00B695, .3);
-    position: static;
-    display: flex;
-    --stroke: rgba(0, 0, 0, .46);
+    @media(min-width: 960px) {
+      right: 0;
+      top: -70px;
+      --stroke: #fff;
+      width: 35px;
+      height: 35px;
+      @media(max-width: 1819px) {
+        right: 50px;
+      }
+      @media(max-width: 1279px) {
+        right: 30px;
+        width: 23px;
+        height: 23px;
+        top: -60px;
+      }
+    }
+    @media(max-width: 959px) {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 1px solid rgba(#00B695, .3);
+      position: static;
+      display: flex;
+      --stroke: rgba(0, 0, 0, .46);
 
-    svg {
-      width: 11px;
-      height: 11px;
-      margin: auto;
+      svg {
+        width: 11px;
+        height: 11px;
+        margin: auto;
+      }
+    }
+  }
+
+  .popup-back {
+    @media(min-width: 960px) {
+      display: none;
     }
   }
 
   &-header {
-    margin-bottom: 25px;
+    @media(min-width: 960px) {
+      justify-content: center;
+      margin-bottom: 40px;
+      @media(max-width: 1279px) {
+        margin-bottom: 35px;
+      }
+    }
+    @media(max-width: 959px) {
+      margin-bottom: 25px;
+    }
     @media(max-width: 719px) {
       margin-bottom: 20px;
     }
   }
 
   &-title {
+    font-size: 24px;
     font-weight: 300;
-    font-size: 18px;
-    line-height: 21px;
+    line-height: 1.2;
     color: #7A7F88;
+    @media(max-width: 1279px) {
+      font-size: 20px;
+    }
+    @media(max-width: 959px) {
+      font-size: 18px;
+    }
     @media(max-width: 719px) {
       font-size: 14px;
-      line-height: 16px;
     }
   }
 
@@ -50,7 +118,14 @@
 
   &-input {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
+    @media(max-width: 1279px) {
+      margin-bottom: 35px;
+    }
+    @media(max-width: 959px) {
+      margin-bottom: 25px;
+    }
+
     input {
       outline: none;
       width: 100%;
@@ -58,12 +133,16 @@
       border-radius: 12px;
       height: 55px;
       padding-left: 15px;
-      padding-right: 115px;
+      padding-right: 150px;
       font-weight: 300;
       font-size: 14px;
       line-height: 170%;
       letter-spacing: 0.01em;
       color: #7A7F88;
+      @media(max-width: 959px) {
+        padding-right: 115px;
+      }
+
       &::placeholder {
         opacity: 0.4;
       }
@@ -71,13 +150,16 @@
 
     .btn {
       position: absolute;
-      right: 15px;
+      right: 10px;
       top: 7px;
       bottom: 7px;
       width: auto;
-      padding: 0 27px;
+      padding: 0 50px;
       border-radius: 10px;
       font-size: 12px;
+      @media(max-width: 959px) {
+        padding: 0 27px;
+      }
       @media(max-width: 719px) {
         right: 7px;
       }
@@ -85,12 +167,19 @@
   }
 
   &-link {
-    width: 25%;
+    width: calc(100% / 8);
+    font-size: 15px;
     font-weight: 300;
-    font-size: 14px;
     line-height: 133.5%;
     letter-spacing: 0.01em;
     color: #7A7F88;
+    @media(max-width: 1819px) {
+      width: calc(100% / 6);
+    }
+    @media(max-width: 959px) {
+      font-size: 14px;
+      width: 25%;
+    }
     @media(max-width: 719px) {
       width: 33%;
     }

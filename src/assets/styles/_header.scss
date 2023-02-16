@@ -260,6 +260,9 @@ body {
 
   .js-city {
     position: relative;
+    svg {
+      transform: rotateX(0);
+    }
     &.active {
       a {
         svg {

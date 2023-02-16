@@ -1,0 +1,22 @@
+mixin advantagesItem(props)
+    .advantages-item.f.f-ac.swiper-slide
+        .advantages-item-icon
+            +svg('sprite-advantages.svg#' + props.icon)
+        .advantages-item-info
+            .advantages-item-title!= props.title
+            p.advantages-item-text!= props.text
+
+-
+  var advantagesList = [
+      {icon: '1', title: 'До 1 Гбит/сек', text: 'подключим интернет <br> в частный дом <br> за 1 день'},
+      {icon: '2', title: 'Выгодно', text: 'широкий выбор <br> тарифных планов <br> от 450 руб. в месяц'},
+      {icon: '3', title: 'Очень быстро', text: 'скорость оптического <br> соединения до 1 Гбит/ <br>сек. в любом районе'},
+      {icon: '4', title: 'Проверено', text: 'более 45 000 <br> довольных абонентов <br> уже подключены в нам'}
+  ]
+
+.advantages
+    .container
+        .advantages-slider.swiper
+            .swiper-wrapper
+                for item in advantagesList
+                  +advantagesItem(item)

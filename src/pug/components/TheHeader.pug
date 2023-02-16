@@ -59,17 +59,12 @@ header.header
                     .social-link
                         +svg('sprite.svg#phone')
                     span +7 3952 56 0000
-            .header-city.js-city
-                .social-link.js-city-open
+            .header-city.js-city(data-modal='popup-city')
+                .social-link
                     +svg('sprite.svg#pin')
                 .header-nav-link.js-city-open
                     a Иркутск
                         +svg('sprite.svg#nav')
-                .dialog
-                    a.dialog-link(href='#') Иркутск
-                    a.dialog-link(href='#') Шелехов
-                    a.dialog-link(href='#') Ангарск
-                    a.dialog-link(href='#') Иркутская область
 
         .header-btn
             .btn(data-modal='popup-connection')
@@ -81,15 +76,9 @@ header.header
         .header-icon._left
             .social-link
                 +svg('sprite.svg#user')
-        .header-icon.js-city
-            .social-link.js-city-open
+        .header-icon.js-city(data-modal='popup-city')
+            .social-link
                 +svg('sprite.svg#pin')
-            .dialog
-                a.dialog-link(href='#') Иркутск
-                a.dialog-link(href='#') Шелехов
-                a.dialog-link(href='#') Ангарск
-                a.dialog-link(href='#') Иркутская область
-
         .header-icon
             .social-link(data-modal='popup-menu')
                 +svg('sprite.svg#burger')
@@ -101,9 +90,9 @@ header.header
         span Иркутск
         | ?
     .modal-city-battons.f
-        .btn.btn-green
+        .btn.btn-stroke
             span  Да
-        .btn.modal-city-change
+        .btn.modal-city-change(data-modal='popup-city')
             span(data-after=', выбрать другой') Нет
 
 include popup/menu
