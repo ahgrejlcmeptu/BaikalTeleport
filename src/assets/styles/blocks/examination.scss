@@ -1,3 +1,123 @@
 .examination {
+  position: relative;
+  margin-top: 140px;
+  @media(max-width: 1819px) {
+    margin-top: 155px;
+  }
+  @media(max-width: 1279px) {
+    margin-top: 165px;
+  }
+  @media(max-width: 959px) {
+    margin-top: 100px;
+  }
+  @media(max-width: 719px) {
+    margin-top: 130px;
+  }
 
+  &-bg {
+    z-index: -1;
+    position: absolute;
+    top: -550px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      min-width: 1920px;
+      max-height: 1696px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-header {
+    p {
+      margin-top: 15px;
+      color: #1D3945;
+      font-size: 16px;
+      line-height: 183.5%;
+      opacity: 0.8;
+
+      @media(max-width: 1279px) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 136%;
+    letter-spacing: -0.02em;
+    @media(max-width: 1279px) {
+      font-size: 26px;
+    }
+    @media(max-width: 719px) {
+      font-size: 24px;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .coverage {
+    margin-top: 25px;
+    gap: 30px;
+    @media(max-width: 1819px) {
+      margin-top: 30px;
+    }
+    @media(max-width: 719px) {
+      margin-top: 45px;
+    }
+
+    &-select {
+      @media(min-width: 1920px) {
+        display: none;
+      }
+    }
+
+    &-link {
+      @media(min-width: 1920px) {
+        width: 435px;
+      }
+      @media(max-width: 719px) {
+        display: flex;
+        margin-top: 55px;
+        height: 54px;
+        border-radius: 14px
+      }
+
+      &-img {
+        &.one {
+          @media(min-width: 1920px) {
+            width: 411px;
+            height: 222px;
+            top: -143px;
+            right: -150px;
+          }
+          @media(max-width: 719px) {
+            width: 192px;
+            right: 0;
+            top: -128px;
+          }
+        }
+
+        &.two {
+          @media(min-width: 1920px) {
+            width: 229px;
+            height: 124px;
+            bottom: -79px;
+            left: -81px;
+          }
+          @media(max-width: 719px) {
+            width: 124px;
+            bottom: -97px;
+            left: -13px;
+          }
+        }
+      }
+    }
+  }
 }

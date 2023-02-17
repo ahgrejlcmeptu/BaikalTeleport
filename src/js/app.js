@@ -11,6 +11,7 @@ import "./animation"
 import "./modal"
 import "./myGallery"
 import "./navigation"
+import "./select"
 
 tabsInit()
 

@@ -1,0 +1,45 @@
+mixin offersItem(props)
+    .offers-item.swiper-slide(class='offers-item_' + props.img)
+        .offers-item-img(class='offers-item-img_' + props.img)
+            picture
+                source(srcset='img/offers/' + props.img + '.png' media='(min-width: 1820px)')
+                source(srcset='img/offers/' + props.img + '-1280.png' media='(min-width: 1280px)')
+                source(srcset='img/offers/' + props.img + '-960.png' media='(min-width: 960px)')
+                source(srcset='img/offers/' + props.img + '-720.png' media='(min-width: 720px)')
+                img(src='img/offers/' + props.img + '-360.png')
+        .container
+            form.page-form(action='#')
+                .page-form-send
+                    h2.offers-item-title!= props.title
+                    .offers-item-text!= props.text
+                    .offers-item-inputs.input-parent
+                        .offers-item-input
+                            input(type='hidden' name='form-name' value='1')
+                            input(type='tel' name='phone' placeholder='+7 _ _ _   _ _ _   _ _ _ _ ' data-required='validatePhone')
+                            button.btn.btn-orange
+                                span Оставить заявку
+                        .input-item-error Некорректно введён номер телефона
+                    .offers-item-politic
+                        label.input-check.input-check-required
+                            input(type='checkbox' name='politic' checked)
+                            span.f
+                                .input-check-box.circle
+                                .input-check-text Я согласен с политикой конфиденциальности
+                .page-form-ok
+
+-
+  var offersList = [
+      {img: '1', title: 'Новым абонентам 500 баллов <br> и скидку 50% при подключении', text: 'Выгода более 4 000 рублей!', form: 'offers-1'},
+      {img: '2', title: 'Переезжаете в другой район? <br> Забери интернет с собой!', text: 'Подключим бесплатно Ваш новый адрес', form: 'offers-2'},
+      {img: '3', title: '50% скидка на подключение, <br> при переходе от другого провайдера', text: 'Перезвоним в течение 2 минут или подарим 500 бонусов на счёт', form: 'offers-3'}
+  ]
+section.offers
+    .offers-bg.offers-bg-1.active
+    .offers-bg.offers-bg-2
+    .offers-bg.offers-bg-3
+    .offers-slider.swiper
+        .swiper-wrapper
+            for item in offersList
+                +offersItem(item)
+
+        .offers-pagination.swiper-pagination

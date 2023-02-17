@@ -1,0 +1,17 @@
+.swiper-pagination {
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+  &-bullet {
+    cursor: pointer;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+    transition: .3s opacity;
+    &-active {
+      opacity: 1;
+    }
+  }
+}

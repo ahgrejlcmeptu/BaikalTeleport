@@ -18,6 +18,26 @@ sliderDefault.forEach(slide => {
   });
 })
 
+new Swiper('.offers-slider', {
+  loop: true,
+  slideDuplicateClass: '-duplicate',
+  pagination: {
+    el: '.offers-pagination',
+    clickable: true
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  on: {
+    slideChange: function () {
+      const bg = document.querySelectorAll('.offers-bg')
+      bg.forEach(i => i.classList.remove('active'))
+      bg[this.realIndex].classList.add('active')
+    }
+  }
+});
+
 const swiperResizeUnit = (props) => {
   const self = props.self
   const el = document.querySelector(`.${self.key}`)

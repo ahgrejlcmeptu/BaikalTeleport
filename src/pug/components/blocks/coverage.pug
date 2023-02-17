@@ -67,9 +67,22 @@ mixin tariffsItem(props)
     .coverage-input
         .coverage-input-wrap
             input(type='text' name='coverage' placeholder='Проверьте возможность подключения')
+
+            if coverageSelect
+                .coverage-select.js-select
+                    .coverage-select-header.js-select-header.f.f-ac
+                        span Интернет
+                        inpit(type='hidden' name='connect' value='Интернет')
+                        +svg('sprite.svg#nav')
+                    .coverage-select-body.js-select-body
+                        .coverage-select-item.js-select-item.active(data-value='Интернет') Интернет
+                        .coverage-select-item.js-select-item(data-value='TV') TV
+                        .coverage-select-item.js-select-item(data-value='Видеонаблюдение') Видеонаблюдение
+
             .coverage-input-btn
                 .btn.btn-orange
                     span Проверить
+
         .coverage-modal
             .coverage-modal-body
                 .coverage-modal-title Действующие тарифы в Хомутово
