@@ -63,7 +63,7 @@
     font-weight: 300;
     font-size: 15px;
     line-height: 150%;
-    color: rgba(#7A7F88, .8);
+    color: var(--colorText, rgba(#7A7F88, .8));
   }
 
   &-required {

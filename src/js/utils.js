@@ -87,3 +87,19 @@ export function tabsInit() {
     })
   })
 }
+
+export function svgLength() {
+  const jsSvg =  [...document.querySelectorAll(".js-svg")];
+  jsSvg.forEach((svg) => {
+    svg.style.setProperty('--stroke', svg.querySelector("path").getTotalLength())
+  });
+}
+
+export function copyInput(str) {
+  let tmp = document.createElement('INPUT');
+  tmp.value = str;
+  document.body.appendChild(tmp);
+  tmp.select();
+  document.execCommand('copy');
+  document.body.removeChild(tmp);
+}

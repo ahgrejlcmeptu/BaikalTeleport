@@ -7,23 +7,13 @@ mixin questionsItem(props)
             .questions-item-wrap
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
 
--
-  var questionsList = [
-      'Какие услуги вы можете предложить дополнительно?',
-      'Как подобрать роутер?',
-      'Какие действуют тарифы на подключение интернета?',
-      'Как узнать, есть ли к интернет БайкалТелепорт в моём поселении?',
-      'Нужно ли оплачивать какие-то дополнительные услуги?',
-      'Как рассчитывается стоимость подключения интернета в загородном доме?',
-      'Дополнительные возможности при подключении интернета в Байкал Телепорт',
-      'Как долго вы рассматриваете заявку на подключение?'
-  ]
 
 section.questions
     .container
         .questions-header
-            h2.questions-title Остались вопросы?
-            p Собрали для вас самые популярные и подробно ответили на них
+            h2.questions-title!= questionsHeader.title
+            if questionsHeader.text
+                p!= questionsHeader.text
         .questions-wrapper.f.f-w
             for item in questionsList
               +questionsItem(item)

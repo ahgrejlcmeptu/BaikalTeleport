@@ -105,6 +105,7 @@
         height: 6px;
         stroke: #1D3945;
         transition: .3s transform;
+        flex-shrink: 0;
       }
     }
 
@@ -143,6 +144,27 @@
       @media(max-width: 1279px) {
         padding-left: 50px;
         padding-right: 25px;
+      }
+    }
+  }
+}
+
+.index-speed {
+  .questions {
+    &-header {
+      text-align: left;
+      @media(min-width: 960px) {
+        margin-bottom: 30px;
+      }
+    }
+    &-title {
+      @media(min-width: 720px) {
+        @media(max-width: 1279px) {
+          font-size: 33px;
+        }
+        @media(max-width: 959px) {
+          font-size: 28px;
+        }
       }
     }
   }

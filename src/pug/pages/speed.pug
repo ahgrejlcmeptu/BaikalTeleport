@@ -1,0 +1,26 @@
+extends ../layout/main
+
+block variables
+  -
+      var title = "Скорость"
+      var pageClass = "index-speed"
+      var questionsList = [
+          'По результатам теста скорость интернета очень низкая',
+          'Я подключён на скорости 100 мегабит или 1 гигабит. Может ли сервис определить реальную скорость?',
+          'По результатам теста скорость интернета очень высокая',
+          'Какова максимальная скорость подключения к интернету, которую сможет замерить сервис?',
+          'Почему тесты на других сайтах показывают сильно отличающуюся скорость подключения к интернету?',
+          'Из-за чего изменяется результат при повторном прохождении теста?'
+      ]
+      var questionsHeader = {
+          title: 'Частые вопросы о скорости'
+      }
+
+block content
+    include ../components/main/speedtest
+
+    include ../components/blocks/questions
+    include ../components/blocks/connection
+    include ../components/blocks/stories
+    include ../components/blocks/news
+    include ../components/blocks/subscription

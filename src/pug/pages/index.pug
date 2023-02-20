@@ -1,8 +1,9 @@
 extends ../layout/main
 
 block variables
-  - var title = "Список страниц"
-  - var pageClass = "index"
+  -
+    var title = "Список страниц"
+    var pageClass = "index"
 
 block content
     style.
@@ -18,9 +19,11 @@ block content
         h2 страницы
         ol(style='list-style: auto')
             li
-                a(href='home.html') home
+                a(href='home.html') Home
             li
                 a(href='internet.html') Internet
+            li
+                a(href='speed.html') Speed
 
         br
         br

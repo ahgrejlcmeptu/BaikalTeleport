@@ -1,0 +1,75 @@
+mixin chartsItem(props)
+    .speedtest-panel-charts-item
+        .speedtest-panel-charts-item-icons
+            +svg('sprite.svg#charts')
+            svg.js-svg._active(viewbox='0 0 126 110')
+                path(d='M24.4682 106C-13.9302 74.2295 3.2756 4 62.8667 4C120.15 4 142.182 71.9303 100.216 106' fill='none' stroke-width='8' stroke-linecap='round')
+            .speedtest-panel-charts-item-value!= props.value
+            .speedtest-panel-charts-item-unit!= props.unit
+        .speedtest-panel-charts-item-name!= props.name
+        p.speedtest-panel-charts-item-text!= props.text
+
+-
+  var chartsList = [
+      {value: '90.50', unit: 'Mb/сек', name: 'Загрузка', text: 'Скорость загрузки'},
+      {value: '90.50', unit: 'Mb/сек', name: 'Скачивание', text: 'Скорость скачки'},
+      {value: '5.00', unit: 'Ms', name: 'Пинг', text: 'Задержка'},
+      {value: '5.00', unit: 'Ms', name: 'Джиттер', text: 'Разброс по времени'}
+  ]
+
+section.speedtest.main-top
+    .speedtest-header
+        .container
+            nav.breadcrumb(aria-label='Breadcrumb')
+                a.breadcrumb-link(href='/') Главная  /  
+                .breadcrumb-link Проверка скорости интернета
+            h1.speedtest-title Проверить скорость интернета
+            p.speedtest-text Сервис проверки скорости интернет-провайдера по вашему адресу.
+                br
+                |
+                | Консультанты помогут выбрать оптимальный тариф, сэкономив ваше время и деньги
+    .speedtest-panel
+        img.speedtest-panel-vector(src='img/speedtest/vector.svg')
+        .container
+            .speedtest-panel-header.f.f-js.f-ac
+                .speedtest-panel-header-item.f.f-ac
+                    .speedtest-panel-header-item-info
+                        span Иркутск
+                        small 141.105.36.197
+                    +svg('sprite.svg#speedtest')
+                .speedtest-panel-header-progress(style='--scale: .3')
+                .speedtest-panel-header-item.f.f-ac
+                    +svg('sprite.svg#speedtest')
+                    .speedtest-panel-header-item-info
+                        span Иркутск
+                        small speedtest.bteleport.ru
+
+            .speedtest-panel-btn
+                .btn.btn-white
+                    span Начать проверку
+            .speedtest-panel-charts.f.f-jc.f-w
+                for item in chartsList
+                    +chartsItem(item)
+            .speedtest-panel-footer.f.f-jc
+                span Поделиться:
+                a._text(href='https://qms.rt.ru/result/24136' target='_blank') https://qms.rt.ru/result/24136
+                span._copy Копировать
+
+
+    .speedtest-body
+        .container
+            .speedtest-help
+                .speedtest-help-title При помощи этого сервиса можно узнать
+                    br
+                    | реальную скорость интернет-соединения любого провайдера
+                p.speedtest-help-text В зависимости от скорости подключения к интернету тест может длиться до нескольких минут. Чтобы оценить реальную пропускную способность канала необходимо приостановить работу всех программ, которые могут закачивать данные из интернета. В зависимости от скорости подключения к интернету тест может длиться до нескольких минут. Чтобы оценить реальную пропускную способность канала необходимо приостановить работу всех программ, которые могут закачивать данные из интернета...
+            .speedtest-bad
+                .speedtest-bad-title Что делать, если по результатам сервиса «Speedtest»
+                    br
+                    |
+                    | скорость не соответствует желаемой?
+                .speedtest-bad-wrapper
+                    .speedtest-bad-suptitle Если вы абонент другого провайдера
+                    p.speedtest-bad-text!= 'Дарим <span>50% скидку на подключение</span> интернета за городом, при переходе от любого провайдера на сеть Байкал Телепорт. А еще дадим <span>1 месяц в подарок</span> на тестирование!'
+                    p.speedtest-bad-text!= '<a data-modal="popup-connection">Оформите простую заявку</a> на подключение в Иркутске и мы свяжемся с вами'
+                    img.speedtest-bad-img(src='img/speedtest/woman.png')

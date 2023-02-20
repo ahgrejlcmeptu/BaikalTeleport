@@ -1,5 +1,5 @@
 import {anchors} from "./anchors";
-import {tabsInit} from "./utils";
+import {tabsInit, svgLength, copyInput} from "./utils";
 import {sendForm, maskPhone} from "./form";
 import {openPopup} from "./modal";
 
@@ -14,6 +14,7 @@ import "./navigation"
 import "./select"
 
 tabsInit()
+svgLength()
 
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a')
@@ -153,6 +154,11 @@ document.addEventListener('mousedown', ({target}) => {
   const questionsActive = document.querySelector('.questions-item.active')
   if (!target.closest('.questions-item') && questionsActive) {
     questionsActive.classList.remove('active')
+  }
+
+  const copy = document.querySelector('.speedtest-panel-footer ._text')
+  if (target.closest('.speedtest-panel-footer ._copy') && copy) {
+    copyInput(copy.textContent)
   }
 })
 
