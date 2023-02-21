@@ -87,5 +87,21 @@
     <symbol id="charts" viewBox="0 0 126 110">
         <path d="M24.4682 106C-13.9302 74.2295 3.2756 4 62.8667 4C120.15 4 142.182 71.9303 100.216 106" fill="none" stroke-width="8" stroke-linecap="round"/>
     </symbol>
+    <symbol id="tv" viewBox="0 0 13 24">
+        <rect fill="none" x="0.5" y="0.5" width="11.9231" height="23"/>
+        <circle stroke="none" cx="3.68175" cy="8.29698" r="0.912217"/>
+        <circle stroke="none" cx="6.42784" cy="8.29698" r="0.912217"/>
+        <circle stroke="none" cx="9.22081" cy="2.75841" r="0.912217"/>
+        <circle stroke="none" cx="9.17784" cy="8.29698" r="0.912217"/>
+        <circle stroke="none" cx="3.68175" cy="11.9894" r="0.912217"/>
+        <circle stroke="none" cx="6.42784" cy="11.9894" r="0.912217"/>
+        <circle stroke="none" cx="9.17784" cy="11.9894" r="0.912217"/>
+        <circle stroke="none" cx="3.68175" cy="15.6813" r="0.912217"/>
+        <circle stroke="none" cx="3.68175" cy="19.3736" r="0.912217"/>
+        <circle stroke="none" cx="6.42784" cy="15.6813" r="0.912217"/>
+        <circle stroke="none" cx="6.42784" cy="19.3736" r="0.912217"/>
+        <circle stroke="none" cx="9.17784" cy="15.6813" r="0.912217"/>
+        <circle stroke="none" cx="9.17784" cy="19.3736" r="0.912217"/>
+    </symbol>
 
 </svg>

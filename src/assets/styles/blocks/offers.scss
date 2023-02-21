@@ -226,6 +226,7 @@
     }
 
     &-img {
+      pointer-events: none;
       position: absolute;
       bottom: -6px;
       right: 0;
@@ -349,5 +350,23 @@
 
   .wrapper {
     overflow: hidden;
+  }
+}
+
+.index-services {
+  .offers {
+    margin-top: 95px;
+    @media(max-width: 1819px) {
+      margin-top: 105px;
+    }
+    @media(max-width: 1279px) {
+      margin-top: 75px;
+    }
+    @media(max-width: 959px) {
+      margin-top: 45px;
+    }
+    @media(max-width: 719px) {
+      margin-top: 30px;
+    }
   }
 }

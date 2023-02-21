@@ -2,9 +2,8 @@ extends ../layout/main
 
 block variables
   -
-      var title = "интернет"
-      var pageClass = "index-internet"
-      var tariffsAdd = true
+      var title = "Услуги"
+      var pageClass = "index-services"
       var coverageSelect = true
       var questionsList = [
           'Какие услуги вы можете предложить дополнительно?',
@@ -22,25 +21,21 @@ block variables
       }
       var advantagesSprite = 'sprite-advantages'
       var advantagesList = [
-          {icon: '1', title: 'До 1 Гбит/сек', text: 'подключим интернет <br> в частный дом <br> за 1 день'},
-          {icon: '2', title: 'Выгодно', text: 'широкий выбор <br> тарифных планов <br> от 450 руб. в месяц'},
-          {
-              icon: '3',
-              title: 'Очень быстро',
-              text: 'скорость оптического <br> соединения до 1 Гбит/ <br>сек. в любом районе'
-          },
-          {icon: '4', title: 'Проверено', text: 'более 45 000 <br> довольных абонентов <br> уже подключены в нам'}
+          {icon: '3', title: 'Интернет <br> со скоростью света', text: 'до 1 Гб/сек. по <br> оптическому кабелю'},
+          {icon: '5', title: 'Более 300 TV <br> каналов ', text: 'и ещё 4 онлайн-<br>кинотеатра в пакете'},
+          {icon: '6', title: 'Видеонаблюдение <br> даже в поле 24/7', text: 'следите за стройкой, <br> домом и производством'},
+          {icon: '2', title: 'Очевидная <br> экономия на всём', text: 'при подключении <br> полного пакета услуг'}
       ]
       var tariffsList = [
           {
               title: '«КОСМОС. <br> АКЦИЯ 50»',
               text: 'Минимум вложений за отличный интернет',
               speed: '50',
-              price: '450',
-              oldPrice: '650',
-              btn: 'Подключить со скидкой',
+              tv: '150',
+              price: '750',
+              oldPrice: '1050',
+              btn: 'ПодключитЬ',
               add: [
-                  {name: 'TV', text: 'TV'},
                   {name: 'CCTV', text: 'Видеонаблюдение'}
               ]
           },
@@ -48,10 +43,10 @@ block variables
               title: '«КОСМОС. <br> АКЦИЯ 100»',
               text: 'Минимум вложений за отличный интернет',
               speed: '100',
-              price: '475',
+              tv: '150',
+              price: '850',
               btn: 'Подключить',
               add: [
-                  {name: 'TV', text: 'TV'},
                   {name: 'CCTV', text: 'Видеонаблюдение'}
               ]
           },
@@ -59,10 +54,10 @@ block variables
               title: '«КОСМОС. <br> АКЦИЯ 300»',
               text: 'Оптимальный вариант для сёрфинга',
               speed: '300',
-              price: '625',
+              tv: '300',
+              price: '1250',
               btn: 'Подключить',
               add: [
-                  {name: 'TV', text: 'TV'},
                   {name: 'CCTV', text: 'Видеонаблюдение'}
               ]
           },
@@ -70,23 +65,22 @@ block variables
               title: '«КОСМОС. <br> АКЦИЯ 500»',
               text: 'Максимальная скорость. Максимальный интернет',
               speed: '500',
-              price: '725',
+              tv: '150',
+              price: '1450',
               btn: 'Подключить',
               add: [
-                  {name: 'TV', text: 'TV'},
                   {name: 'CCTV', text: 'Видеонаблюдение'}
               ]
           }
       ]
 
 block content
-    include ../components/main/internet
-    include ../components/blocks/offers
+    include ../components/main/services
     include ../components/blocks/advantages
-    include ../components/blocks/destination
+    include ../components/blocks/offers
+    include ../components/services/tariffs
+    include ../components/blocks/servicesList
     include ../components/blocks/examination
-    include ../components/blocks/tariffs
-    include ../components/blocks/giveday
     include ../components/blocks/stories
     include ../components/blocks/questions
     include ../components/blocks/news

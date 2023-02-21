@@ -79,9 +79,11 @@
       @media(hover) {
         &:hover {
           color: #439292;
+
           svg {
             stroke: #439292;
           }
+
           &:before {
             border-color: #439292;
           }
@@ -92,12 +94,15 @@
         &:before {
           border-bottom: 1px dashed #424D50;
         }
+
         svg {
           stroke: #1D3945;
         }
       }
+
       &._small {
         font-weight: 500;
+
         svg {
           margin-left: 10px;
           width: 16px;
@@ -211,7 +216,7 @@
 
   .tariffs-item {
     .input-check {
-      --color: hsla(0,0%,90.2%,0.7);
+      --color: hsla(0, 0%, 90.2%, 0.7);
     }
   }
 
@@ -260,6 +265,7 @@
       .tariffs-item-value {
         color: #F6622F;
       }
+
       .input-check {
         --color: rgba(255, 213, 149, .7);
         --colorHover: rgba(255, 180, 68, .7);
@@ -314,26 +320,12 @@
       }
     }
 
-    &-speed {
+    &-speed,
+    &-tv {
       margin-top: 10px;
       gap: 10px;
       @media(max-width: 719px) {
         gap: 7px;
-      }
-
-      svg {
-        width: 28px;
-        height: 25px;
-        fill: #8F8F8F;
-        stroke: #8F8F8F;
-        @media(max-width: 1279px) {
-          width: 24px;
-          height: 22px;
-        }
-        @media(max-width: 719px) {
-          width: 23px;
-          height: 20px;
-        }
       }
 
       span {
@@ -363,6 +355,54 @@
 
     }
 
+    &-icon {
+      display: flex;
+      width: 28px;
+      @media(max-width: 1279px) {
+        width: 24px;;
+      }
+      @media(max-width: 719px) {
+        width: 23px;
+      }
+
+      svg {
+        margin: auto;
+      }
+    }
+
+    &-speed {
+      svg {
+        width: 28px;
+        height: 25px;
+        fill: #8F8F8F;
+        stroke: #8F8F8F;
+        @media(max-width: 1279px) {
+          width: 24px;
+          height: 22px;
+        }
+        @media(max-width: 719px) {
+          width: 23px;
+          height: 20px;
+        }
+      }
+
+      + .tariffs-item-tv {
+        margin-top: 0;
+      }
+    }
+
+    &-tv {
+      svg {
+        width: 13px;
+        height: 24px;
+        fill: #8F8F8F;
+        stroke: #8F8F8F;
+      }
+      + .tariffs-item-speed {
+        margin-top: 0;
+      }
+    }
+
     &-add {
       margin-top: 15px;
 
@@ -376,10 +416,12 @@
 
       &-item {
         margin-top: 8px;
+
         .input-check {
           .f {
             gap: 10px;
           }
+
           &-text {
             font-weight: 300;
             font-size: 14px;
@@ -739,5 +781,140 @@
         font-size: 14px;
       }
     }
+  }
+}
+
+.tariffs-services {
+  margin-top: 100px;
+  position: relative;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media(max-width: 1279px) {
+    margin-top: 120px;
+  }
+  @media(max-width: 959px) {
+    margin-top: 105px;
+  }
+  @media(max-width: 719px) {
+    margin-top: 65px;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  &-title {
+    min-width: 340px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 143%;
+    letter-spacing: -0.02em;
+    max-width: 805px;
+    @media(max-width: 1279px) {
+      max-width: 550px;
+    }
+    @media(max-width: 959px) {
+      font-size: 28px;
+      max-width: 100%;
+    }
+  }
+
+  &-text {
+    line-height: 183.5%;
+    opacity: 0.8;
+    margin-top: 15px;
+    max-width: 890px;
+    @media(max-width: 1279px) {
+      font-size: 15px;
+      max-width: 580px;
+      margin-top: 25px;
+    }
+    @media(max-width: 959px) {
+      font-size: 14px;
+      max-width: 470px;
+      margin-top: 20px;
+    }
+    @media(max-width: 719px) {
+      max-width: 100%;
+    }
+
+    a {
+      &:not(:hover) {
+        color: #008A71;
+      }
+
+      border-bottom: 1px solid #008A71;
+    }
+  }
+
+  .tariffs {
+    &-slider {
+      margin-top: 40px;
+      @media(max-width: 1279px) {
+        margin-top: 50px;
+      }
+      @media(max-width: 719px) {
+        margin-top: 45px;
+      }
+    }
+
+    &-item {
+      background: #F7F7F7;
+      border: 1px solid #F7F7F7;
+
+      &_discount {
+        background: #FFF8F0;
+        border-color: #FFC27A;
+      }
+    }
+
+    &-sticker {
+      top: -80px;
+      padding-top: 45px;
+      transform: translateX(642px) rotate(62deg);
+      transform-origin: 50% 50%;
+      right: 50%;
+      @media(max-width: 1819px) {
+        right: -50px;
+        transform: rotate(62deg);
+        transform-origin: 31% 17%;
+      }
+      @media(max-width: 1279px) {
+        transform-origin: 10% 25%;
+        transform: rotate(62deg) scale(.9);
+      }
+      @media(max-width: 959px) {
+        transform: rotate(62deg) scale(.64);
+        transform-origin: 8% 60%;
+      }
+      @media(max-width: 719px) {
+        display: none;
+      }
+      &-wrap {
+        transform: translate(-15px, 10px) rotate(-48deg);
+      }
+      &-text {
+        margin-bottom: 10px;
+      }
+      &-small {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+
+  .tariffs-title-btn:before {
+    margin-top: 0;
+  }
+}
+
+.index-services {
+  overflow-x: hidden;
+  .wrapper {
+    overflow: hidden;
   }
 }

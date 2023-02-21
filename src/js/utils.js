@@ -103,3 +103,29 @@ export function copyInput(str) {
   document.execCommand('copy');
   document.body.removeChild(tmp);
 }
+
+export function textAccordion() {
+  const accordions = [...document.querySelectorAll('.text-accordion')]
+  accordions.forEach(item => {
+    const MAX = 503
+    const html = item.innerHTML
+    const text = item.textContent
+    let newText = text
+    let open = false
+    if (newText.length > MAX) {
+      newText = newText.slice(0, MAX+1)
+      newText = `${newText}... <svg><use xlink:href="sprite.svg#nav"></use></svg>`
+    }
+    item.innerHTML = newText
+
+    item.onclick = () => {
+      if (open) {
+        open = false
+        item.innerHTML = newText
+      } else {
+        open = true
+        item.innerHTML = html
+      }
+    }
+  })
+}

@@ -1,0 +1,27 @@
+section.tariffs-services
+    .tariffs-sticker(style='background-image: url(img/tariffs/sticker.svg)')
+        .tariffs-sticker-wrap
+            .tariffs-sticker-text Не нашли свой населённый пункт?
+            .tariffs-sticker-small Проверьте возможность подключения
+    .container
+        h2.tariffs-services-title Больше возможностей и выгоды в одном пакете для
+            .tariffs-title-wrap
+                .tariffs-title-btn._black._small п. Хомутово
+                    +svg('sprite.svg#nav')
+                .tariffs-city
+                    .tariffs-city-input
+                        input(type='text' name='city' placeholder="Найти")
+                        .btn.btn-orange
+                            span найти
+                    .tariffs-city-list.f.f-w
+                        a.tariffs-city-link(href='#') Шелехов
+                        a.tariffs-city-link(href='#') Мегет
+                        a.tariffs-city-link(href='#') Ангарск
+                        a.tariffs-city-link(href='#') Максимовщина
+                        a.tariffs-city-link(href='#') Хомутово
+                        a.tariffs-city-link(href='#') Патроны
+        p.tariffs-services-text!= 'Тарифные планы действуют согласно указанному населенном пункту. Если вашего населенного пункта нет в списке, <a href="#" data-modal="popup-connection">оставьте заявку</a> на подключение и мы подберем для вас наиболее выгодный тариф!'
+        .tariffs-slider.swiper
+            .swiper-wrapper.f-js
+                for item in tariffsList
+                  +tariffsItem(item)

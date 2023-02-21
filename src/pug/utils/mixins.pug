@@ -2,35 +2,49 @@ mixin svg(icon)
     svg(class!=attributes.class, viewBox!=attributes.viewBox, width!=attributes.width, height!=attributes.height, style!=attributes.style)
         use(xlink:href= icon)
 
-mixin blockCorner(plus, reverse)
-    .block-corner__wrap
-        if plus
-            .block-corner__plus.block-corner__plus_top
-                +svg('sprite.svg#plus')
-            .block-corner__plus.block-corner__plus_bottom
-                +svg('sprite.svg#plus')
-        .block-corner__corner.block-corner__corner_left
-        .block-corner__corner.block-corner__corner_right
-        .block-corner__bg
-        .block-corner__border
+mixin tariffsItem(props, link)
+    .tariffs-item.swiper-slide(class=[{'tariffs-item_discount': props.oldPrice}])
+        if props.oldPrice
+            .tariffs-item-tag
+                +svg('sprite.svg#tag')
+        h6.tariffs-item-title!= props.title
+        p.tariffs-item-text!= props.text
+        if props.speed
+            .tariffs-item-speed.f.f-ac
+                .tariffs-item-icon
+                    +svg('sprite.svg#speed')
+                span!= props.speed
+                    |  
+                    small Мбит/сек
+        if props.tv
+            .tariffs-item-tv.f.f-ac
+                .tariffs-item-icon
+                    +svg('sprite.svg#tv')
+                span!= props.tv
+                    |  
+                    small ТВ-каналов
 
-mixin inputCheck(props)
-    label.input-radio
-        input(name= props.name value= props.text checked= props.checked type= props.type || 'checkbox' data-required= props.required)
-        .input-radio__wrap.f
-            .input-radio__box.f(class= props.icon || '')
-                if !props.icon
-                    +svg('sprite.svg#plus')
-            .input-radio__text!= props.text
+        if props.add
+            .tariffs-item-add
+                .tariffs-item-add-title Дополнительно:
+                for i in props.add
+                    .tariffs-item-add-item
+                        label.input-check
+                            input(type='checkbox' name= i.name)
+                            span.f
+                                .input-check-box.circle
+                                .input-check-text!= i.text
 
-mixin teamItem(props)
-    .team-item._anim-items._anim-top(class= props.className)
-        img.team-item__img.lazy(src='img/team/' + props.img + '.png' alt='')
+        .tariffs-item-price.f.f-js
+            .tariffs-item-value!= props.price
+                small  ₽/мес
+            if props.oldPrice
+                .tariffs-item-old!= props.oldPrice
+                    small  ₽/мес
 
-        if props.value
-            .team-item__value= props.value
-        if props.name
-            .team-item__hover.block-corner(class={'block-corner__reverse': props.reverse})
-                .team-item__name!= props.name
-                .team-item__work!= props.work
-                +blockCorner()
+        .tariffs-item-btn
+            .btn(class=[props.oldPrice ? 'btn-orange' : 'btn-green'])
+                span!= props.btn
+        if !link
+            .tariffs-item-link.f.f-jc
+                a(href='#') Подробнее о тарифе

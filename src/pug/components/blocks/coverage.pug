@@ -1,64 +1,50 @@
-mixin tariffsItem(props)
-    .tariffs-item.swiper-slide(class=[{'tariffs-item_discount': props.oldPrice}])
-        if props.oldPrice
-            .tariffs-item-tag
-                +svg('sprite.svg#tag')
-        h6.tariffs-item-title!= props.title
-        p.tariffs-item-text!= props.text
-        .tariffs-item-speed.f.f-ac
-            +svg('sprite.svg#speed')
-            span!= props.speed
-                |  
-                small Мбит/сек
-        .tariffs-item-add
-            .tariffs-item-add-title Дополнительно:
-            .tariffs-item-add-item
-                label.input-check
-                    input(type='checkbox' name='TV')
-                    span.f
-                        .input-check-box.circle
-                        .input-check-text TV
-            .tariffs-item-add-item
-                label.input-check
-                    input(type='checkbox' name='CCTV')
-                    span.f
-                        .input-check-box.circle
-                        .input-check-text Видеонаблюдение
-
-        .tariffs-item-price.f.f-js
-            .tariffs-item-value!= props.price
-                small  ₽/мес
-
-        .tariffs-item-btn
-            .btn(class=[props.oldPrice ? 'btn-orange' : 'btn-green'])
-                span!= !props.oldPrice ? 'Подключить' : 'Подключить со скидкой'
-
 -
-    var tariffsList = [
+    var coverageLink = true
+    var coverageList = [
         {
             title: '«КОСМОС. <br> АКЦИЯ 50»',
             text: 'Минимум вложений за отличный интернет',
             speed: '50',
             price: '450',
-            oldPrice: '650'
+            oldPrice: '650',
+            btn: 'Подключить со скидкой',
+            add: [
+                {name: 'TV', text: 'TV'},
+                {name: 'CCTV', text: 'Видеонаблюдение'}
+            ]
         },
         {
             title: '«КОСМОС. <br> АКЦИЯ 100»',
             text: 'Минимум вложений за отличный интернет',
             speed: '100',
             price: '475',
+            btn: 'Подключить',
+            add: [
+                {name: 'TV', text: 'TV'},
+                {name: 'CCTV', text: 'Видеонаблюдение'}
+            ]
         },
         {
             title: '«КОСМОС. <br> АКЦИЯ 300»',
             text: 'Оптимальный вариант для сёрфинга',
             speed: '300',
             price: '625',
+            btn: 'Подключить',
+            add: [
+                {name: 'TV', text: 'TV'},
+                {name: 'CCTV', text: 'Видеонаблюдение'}
+            ]
         },
         {
             title: '«КОСМОС. <br> АКЦИЯ 500»',
             text: 'Максимальная скорость. Максимальный интернет',
             speed: '500',
             price: '725',
+            btn: 'Подключить',
+            add: [
+                {name: 'TV', text: 'TV'},
+                {name: 'CCTV', text: 'Видеонаблюдение'}
+            ]
         }
     ]
 
@@ -88,8 +74,8 @@ mixin tariffsItem(props)
                 .coverage-modal-title Действующие тарифы в Хомутово
                 .coverage-modal-slider.swiper
                     .swiper-wrapper
-                        for item in tariffsList
-                            +tariffsItem(item)
+                        for item in coverageList
+                            +tariffsItem(item, coverageLink)
                 .coverage-modal-btn.f.f-jc
                     .btn
                         span сравнить тарифы

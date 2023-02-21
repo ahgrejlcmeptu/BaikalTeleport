@@ -56,8 +56,14 @@ function openTariffs() {
     const tariffsBtn = tariffsWrap.querySelector('.tariffs-title-btn')
     const tariffsCity = tariffsWrap.querySelector('.tariffs-city input')
     const tariffsLinks = tariffsWrap.querySelectorAll('.tariffs-city-link')
+    const tariffsWrapper = tariffsWrap.querySelector('.tariffs-city')
 
     tariffsBtn.addEventListener('click', () => {
+      if (!tariffsWrap.classList.contains('active')) {
+        if (tariffsWrapper.getBoundingClientRect().x + tariffsWrapper.clientWidth > innerWidth) {
+          tariffsWrapper.style.left = -(tariffsWrapper.getBoundingClientRect().x + tariffsWrapper.clientWidth - innerWidth - 20) + 'px'
+        }
+      }
       tariffsWrap.classList.toggle('active')
     })
 

@@ -1,0 +1,27 @@
+mixin serviceItem(props)
+    .service-item.swiper-slide
+        img.service-item-img(src='img/services/' + props.img + '.png')
+        .service-item-title!= props.title
+        .service-item-text!= props.text
+        .service-item-btn.f
+            a.btn.btn-white(href='#')
+                span!= props.btn
+
+-
+  var servicesList = [
+      {btn: 'выбрать тариф', title: 'Скоростной <br> безлимитный <br> интернет без лагов', text: 'Работайте, играйте, общайтесь <br> и ведите стримы. Быстрый<br> и стабильный интернет <br> для всей семьи', img: '5'},
+      {btn: 'подключить', title: 'Видеонаблюдение <br> в дом, на склад <br> или в поле!', text: 'Защитим вашу собственность –  подберем оборудование <br> и подключим IP-камеры <br> на участках, в домах и на дачах', img: '6'},
+      {btn: 'подключить', title: 'Цифровое TV <br> от 300 каналов <br> для всей семьи', text: 'Смотрите цифровое ТВ на даче, <br> в коттедже или частном доме. Работаем по всей Иркутской области!', img: '7'},
+      {btn: 'подключить', title: 'IP-Телефония <br> с городским <br> номером', text: 'Отличная альтернатива домашнему телефону, только удобней и дешевле!', img: '8'}
+  ]
+
+section.services
+    .container
+        h2.services-title Популярные услуги для тех,
+            br
+            |
+            | кто привык быть всегда на связи
+        .services-slider.swiper
+            .swiper-wrapper
+                for item in servicesList
+                    +serviceItem(item)

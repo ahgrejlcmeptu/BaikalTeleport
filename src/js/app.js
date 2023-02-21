@@ -1,5 +1,5 @@
 import {anchors} from "./anchors";
-import {tabsInit, svgLength, copyInput} from "./utils";
+import {tabsInit, svgLength, copyInput, textAccordion} from "./utils";
 import {sendForm, maskPhone} from "./form";
 import {openPopup} from "./modal";
 
@@ -15,6 +15,7 @@ import "./select"
 
 tabsInit()
 svgLength()
+textAccordion()
 
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a')

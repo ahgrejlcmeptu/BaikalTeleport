@@ -501,11 +501,13 @@
     &-text {
       max-width: 1050px;
       margin-top: 15px;
-      line-height: 183.5%;
-      color: #424D50;
-      opacity: 0.8;
-      @media(max-width: 719px) {
-        font-size: 14px;
+      p {
+        line-height: 183.5%;
+        color: #424D50;
+        opacity: 0.8;
+        @media(max-width: 719px) {
+          font-size: 14px;
+        }
       }
     }
   }
