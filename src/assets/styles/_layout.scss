@@ -6,7 +6,7 @@ img, .btn {
   user-select: none;
 }
 
-p, ul, h1, h2,h3,h4,h5,h6 {
+p, ul, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -44,6 +44,7 @@ body {
   @media(max-width: 719px) {
     overflow: hidden;
   }
+
   main {
     flex-grow: 1;
     margin-bottom: 180px;
@@ -96,6 +97,7 @@ body {
   &-jc {
     justify-content: center;
   }
+
   &-dc {
     flex-direction: column;
   }
@@ -106,7 +108,7 @@ body {
   font-weight: 500;
   line-height: 1.2;
   font-size: 19px;
-  color: #1D3945!important;
+  color: #1D3945 !important;
   @media(hover) {
     &:hover {
       svg {
@@ -118,6 +120,7 @@ body {
     gap: 11px;
     font-size: 16px;
   }
+
   svg {
     transition: .5s transform;
     width: 53px;
@@ -125,6 +128,7 @@ body {
       width: 45px;
     }
   }
+
   &-text {
     small {
       font-size: 0.68em;
@@ -136,6 +140,7 @@ body {
 .social {
   display: flex;
   gap: 11px;
+
   &-link {
     cursor: pointer;
     flex-shrink: 0;
@@ -157,6 +162,7 @@ body {
         }
       }
     }
+
     svg {
       transition: .3s fill, .3s stroke;
       display: block;
@@ -177,6 +183,7 @@ body {
         opacity: 1;
         visibility: visible;
       }
+
       &-send {
         opacity: 0;
         visibility: hidden;
@@ -197,7 +204,45 @@ body {
 
 .tabs-item {
   display: none;
+
   &.active {
     display: block;
+  }
+}
+
+.index-services {
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: 70% 0;
+    background-repeat:  no-repeat;
+    @media(max-width: 1819px) {
+      height: 933px;
+      top: -31px;
+      background-size: 3003px 100%;
+      background-position: 55% 0;
+    }
+    @media(max-width: 1279px) {
+      height: 817px;
+      background-size: 2629px 100%;
+      background-position: 65% 0;
+      top: 0;
+    }
+    @media(max-width: 959px) {
+      height: 709px;
+      background-size: 1938px 100%;
+      background-position: 60% 0;
+      top: 0;
+    }
+    @media(max-width: 719px) {
+      height: 863px;
+      top: -55px;
+      background-size: 1835px 100%;
+    }
   }
 }

@@ -27,16 +27,10 @@ mixin offersItem(props)
                                 .input-check-text Я согласен с политикой конфиденциальности
                 .page-form-ok
 
--
-  var offersList = [
-      {img: '1', title: 'Новым абонентам 500 баллов <br> и скидку 50% при подключении', text: 'Выгода более 4 000 рублей!', form: 'offers-1'},
-      {img: '2', title: 'Переезжаете в другой район? <br> Забери интернет с собой!', text: 'Подключим бесплатно Ваш новый адрес', form: 'offers-2'},
-      {img: '3', title: '50% скидка на подключение, <br> при переходе от другого провайдера', text: 'Перезвоним в течение 2 минут или подарим 500 бонусов на счёт', form: 'offers-3'}
-  ]
 section.offers
-    .offers-bg.offers-bg-1.active
-    .offers-bg.offers-bg-2
-    .offers-bg.offers-bg-3
+    for item, index in offersList
+        .offers-bg(class=[{'active': index === 0}, 'offers-bg-' + item.img])
+
     .offers-slider.swiper
         .swiper-wrapper
             for item in offersList

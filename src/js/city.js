@@ -61,9 +61,16 @@ function openTariffs() {
     tariffsBtn.addEventListener('click', () => {
       if (!tariffsWrap.classList.contains('active')) {
         if (tariffsWrapper.getBoundingClientRect().x + tariffsWrapper.clientWidth > innerWidth) {
-          tariffsWrapper.style.left = -(tariffsWrapper.getBoundingClientRect().x + tariffsWrapper.clientWidth - innerWidth - 20) + 'px'
+          tariffsWrapper.style.left = -(tariffsWrapper.getBoundingClientRect().x + tariffsWrapper.clientWidth - innerWidth + 20) + 'px'
         }
       }
+
+      tariffsWrapper.ontransitionend = () => {
+        if (!tariffsWrap.classList.contains('active')) {
+          tariffsWrapper.style.left = null
+        }
+      }
+
       tariffsWrap.classList.toggle('active')
     })
 
