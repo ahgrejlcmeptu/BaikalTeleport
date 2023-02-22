@@ -1,0 +1,16 @@
+mixin requisitesItem(props)
+    .requisites-item
+        .requisites-item-title!= props.title
+        p.requisites-item-text!= props.text
+        .requisites-item-btn
+            a.btn.btn-stroke(download href='#')
+                span Скачать
+                +svg('sprite.svg#list')
+                span .pdf
+
+section.requisites
+    .container
+        h2.requisites-title Реквизиты Байкал Телепорт
+        .requisites-list.f.f-w
+          for item in requisitesList
+              +requisitesItem(item)

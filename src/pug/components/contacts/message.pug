@@ -1,0 +1,34 @@
+section.message
+    .message-bg(style='background-image: url(img/contacts/message-bg.svg)')
+    .container
+        form.page-form(action='#')
+            img.message-img(src='img/contacts/message-woman.png' alt='')
+            .page-form-send.f.f-ac.f-js.f-w
+                .message-left
+                    h2.message-title Напишите нам письмо
+                    p.message-text Если у вас остались какие-либо вопросы, заполните данную форму и менеджер свяжется с вами в скором времени
+                .message-right
+                    .input-parent.input-item
+                        input(type='text' name='name' placeholder='Ваше имя')
+                    .input-parent.input-item
+                        input(type='tel' name='phone' placeholder='+7 _ _ _  _ _ _  _ _ _ _ ' data-required='validatePhone')
+                        .input-item-error Некорректно введён номер телефона
+                    .input-parent.input-item
+                        textarea(name='comment' placeholder='Ваше сообщение')
+                    button.btn.btn-stroke-white(type='submit')
+                        span отправить сообщение
+                    label.input-check.input-check-required
+                        input(type='checkbox' name='politic' checked)
+                        span.f
+                            .input-check-box.circle
+                            .input-check-text Я согласен с политикой конфиденциальности
+            .page-form-ok.f.f-dc.f-jc
+                .message-left
+                    h2.message-title Ваше письмо
+                        br
+                        | доставлено!
+                    p.message-text Мы получили ваше письмо
+                        br
+                        | и вскоре свяжемся с вами.
+                        br
+                        | Оставайтесь на связи

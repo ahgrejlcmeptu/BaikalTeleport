@@ -1,0 +1,46 @@
+section.main.main-top
+    .container
+        nav.breadcrumb(aria-label='Breadcrumb')
+            a.breadcrumb-link(href='/') Главная  /  
+            .breadcrumb-link(href='#') Контакты
+
+
+
+        h1.main-title!= "Отдел технической <br> поддержки абонентов"
+        .main-contacts.f.f-w.f-ac.f-js
+            .main-contacts-phone
+                a(href='tel: 8 3952 56 0000') 8 3952 56 0000
+            .main-contacts-operators.f
+                .main-contacts-operator(style='background-image: url(img/contacts/face-1.png)')
+                .main-contacts-operator(style='background-image: url(img/contacts/face-2.png)')
+                .main-contacts-operator.active(style='background-image: url(img/contacts/face-3.png)')
+
+        .main-description
+            p!= 'Ответим в любое время. Работаем 24/7'
+            a(href='mailto:help@bteleport.ru') help@bteleport.ru
+
+        .main-section.f.f-w
+            h2.main-title Контакты главного офиса
+                br
+                | в Иркутске
+
+            .social
+                a.social-link(href='#' target='_blank')
+                    +svg('sprite.svg#vk')
+                a.social-link(href='#' target='_blank')
+                    +svg('sprite.svg#od')
+                a.social-link(href='#' target='_blank')
+                    +svg('sprite.svg#wa')
+                a.social-link(href='#' target='_blank')
+                    +svg('sprite.svg#tg')
+            .main-section-address
+                p ПН-ПТ – с 8:00 до 17:00 без обеда
+                    br
+                    | СБ-ВС – выходной
+                p г. Иркутск. ул, Пролетарская, 8, оф. 30, 3 этаж
+            .main-section-links.f.f-dc
+                a.main-section-phone(href='tel:+7 964 810 80 33') +7 964 810 80 33
+                a.main-section-mail(href='mailto:office@bteleport.ru') office@bteleport.ru
+    .main-map
+        img.main-map-img(src='img/contacts/map.png' alt='')
+        #map

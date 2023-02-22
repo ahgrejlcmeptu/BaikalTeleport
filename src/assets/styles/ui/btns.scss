@@ -19,6 +19,9 @@
   span {
     opacity: .9;
   }
+  svg {
+    transition: .3s;
+  }
 
   @media(hover) {
     &:hover {
@@ -44,7 +47,28 @@
 
   &-stroke {
     border-color: #00C9A5;
-    color: #424D50;
+    color: var(--color, #424D50);
+
+    svg {
+      transition: .3s;
+      fill: var(--fill, #424D50);
+    }
+
+    @media(hover) {
+      &:hover {
+        background: #FF7223;
+        color: #fff;
+        border-color: #FF7223;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &-stroke-white {
+    border-color: #fff;
+    color: #FFFFFF;
 
     @media(hover) {
       &:hover {

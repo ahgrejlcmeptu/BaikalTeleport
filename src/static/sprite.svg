@@ -103,5 +103,8 @@
         <circle stroke="none" cx="9.17784" cy="15.6813" r="0.912217"/>
         <circle stroke="none" cx="9.17784" cy="19.3736" r="0.912217"/>
     </symbol>
+    <symbol id="list" viewBox="0 0 8 12">
+        <path d="M0.34375 11.0468V0.953613H4.75696L7.33133 3.7797V11.0468H0.34375Z" stroke="none"/>
+    </symbol>
 
 </svg>
