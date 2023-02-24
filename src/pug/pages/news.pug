@@ -1,0 +1,20 @@
+extends ../layout/main
+
+block variables
+  -
+      var title = "Новости"
+      var pageClass = "index-news"
+      var newsList = [
+          {img: '1', name: 'Акция! 0 рублей первый месяц', date: '21.12.2022'},
+          {img: '2', name: 'Новые подключения в СНТ "Спутник"', date: '03.10.2022'},
+          {img: '3', name: 'Новые подключения в ДНТ "Атлас"', date: '05.11.2022'},
+          {img: '4', name: 'Акция! ТВ 30 дней бесплатно', date: '05.12.2022'},
+          {img: '1', name: 'Акция! 0 рублей первый месяц', date: '21.12.2022'},
+          {img: '2', name: 'Новые подключения в СНТ "Спутник"', date: '03.10.2022'},
+          {img: '3', name: 'Новые подключения в ДНТ "Атлас"', date: '05.11.2022'},
+          {img: '4', name: 'Акция! ТВ 30 дней бесплатно', date: '05.12.2022'}
+      ]
+
+block content
+    include ../components/main/news
+    include ../components/contacts/message

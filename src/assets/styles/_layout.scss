@@ -246,3 +246,32 @@ body {
     }
   }
 }
+
+.swiper-button {
+  --size: 47px;
+  --pos: 0;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+  background: #F4F4F4;
+  transition: .3s;
+  svg {
+    margin: auto;
+    width: 11px;
+    height: 17px;
+    stroke: #7A7F88;
+  }
+
+  &-prev{
+    left: var(--pos);
+  }
+  &-next {
+    right: var(--pos);
+  }
+}

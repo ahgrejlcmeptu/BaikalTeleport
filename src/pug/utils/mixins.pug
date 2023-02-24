@@ -48,3 +48,10 @@ mixin tariffsItem(props, link)
         if !link
             .tariffs-item-link.f.f-jc
                 a(href='#') Подробнее о тарифе
+
+mixin newsItem(props)
+    a.news-item(href='#')
+        .news-item-img
+            img(src='img/news/' + props.img + '.png' alt= props.name)
+        .news-item-name!= props.name
+        .news-item-date!= props.date

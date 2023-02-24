@@ -18,6 +18,16 @@ sliderDefault.forEach(slide => {
   });
 })
 
+new Swiper('.article-slider', {
+  slidesPerView: 'auto',
+  loop: 'auto',
+  slideDuplicateClass: '-duplicate',
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+
 new Swiper('.offers-slider', {
   loop: true,
   slideDuplicateClass: '-duplicate',

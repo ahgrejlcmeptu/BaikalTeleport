@@ -11,9 +11,9 @@ mixin questionsItem(props)
 section.questions
     .container
         .questions-header
-            h2.questions-title!= questionsHeader.title
-            if questionsHeader.text
-                p!= questionsHeader.text
+            h2.questions-title!= questions.title
+            if questions.text
+                p!= questions.text
         .questions-wrapper.f.f-w
-            for item in questionsList
+            for item in questions.list
               +questionsItem(item)

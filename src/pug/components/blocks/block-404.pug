@@ -1,0 +1,28 @@
+.index-404-img
+    picture
+        source(srcset='img/404.png' media='(min-width: 1280px)')
+        source(srcset='img/404-960.png' media='(min-width: 960px)')
+        source(srcset='img/404-720.png' media='(min-width: 720px)')
+        img(src='img/404-360.png' alt='404')
+
+section.block-404.main-top
+    .container
+        nav.breadcrumb(aria-label='Breadcrumb')
+            a.breadcrumb-link(href='/') Главная  /  
+            .breadcrumb-link(href='#') 404
+
+        h1.block-404-title Упс!
+            br
+            | Связь потеряна
+        p.block-404-text Но мы уже работаем над устранением
+            br
+            | этой проблемы
+
+        .block-404-subtitle Предлагаем посмотреть
+            br
+            | эти страницы
+
+        .block-404-list
+            a.block-404-link(href='#') Список услуг
+            a.block-404-link(href='#') Проверка скорости нашего интернета
+            a.block-404-link(href='#') Главная

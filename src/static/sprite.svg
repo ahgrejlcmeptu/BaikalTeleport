@@ -106,5 +106,11 @@
     <symbol id="list" viewBox="0 0 8 12">
         <path d="M0.34375 11.0468V0.953613H4.75696L7.33133 3.7797V11.0468H0.34375Z" stroke="none"/>
     </symbol>
+    <symbol id="prev" viewBox="0 0 7 12">
+        <path d="M6 1L1 6.00006L6 11" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="next" viewBox="0 0 7 12">
+        <path d="M1 1L6 6.00006L1 11" fill="none" stroke-linecap="round"/>
+    </symbol>
 
 </svg>

@@ -1,6 +1,6 @@
 import {anchors} from "./anchors";
 import {tabsInit, svgLength, copyInput, textAccordion} from "./utils";
-import {sendForm, maskPhone} from "./form";
+import {sendForm, validationForm, maskPhone} from "./form";
 import {openPopup} from "./modal";
 
 import "./ratingStars"
@@ -34,19 +34,20 @@ document.addEventListener('click', (e) => {
   }
 })
 
-const inputPhone = document.querySelectorAll('input[name="phone"]');
-if (inputPhone.length) {
-  inputPhone.forEach(item => {
-    maskPhone(item)
-  })
-}
+const inputPhone = [...document.querySelectorAll('input[name="phone"]')];
+inputPhone.forEach(item => {
+  maskPhone(item)
+})
 
-const pageForm = document.querySelectorAll('.page-form');
-if (pageForm.length) {
-  pageForm.forEach(item => {
-    sendForm(item)
-  })
-}
+const pageForm = [...document.querySelectorAll('.page-form')];
+pageForm.forEach(item => {
+  sendForm(item)
+})
+
+const pageFormValid = [...document.querySelectorAll('.page-form-valid')];
+pageFormValid.forEach(item => {
+  validationForm(item)
+})
 
 subscriptionMsg()
 

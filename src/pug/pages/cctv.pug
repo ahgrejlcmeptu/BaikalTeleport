@@ -1,0 +1,21 @@
+extends ../layout/main
+
+block variables
+  -
+      var title = "Видеонаблюдение"
+      var pageClass = "index-cctv"
+      var questions = {
+          title: 'Часто задаваемые вопросы <br> о видеонаблюдении',
+          list: [
+              'ПЧто такое Видеонаблюдение?',
+              'Какие тарифы доступны?',
+              'Как посмотреть архив и события видеокамеры?',
+              'Можно ли самостоятельно установить камеру видеонаблюдения?'
+          ]
+      }
+
+block content
+    include ../components/blocks/stories
+    include ../components/blocks/questions
+    include ../components/blocks/news
+    include ../components/blocks/subscription

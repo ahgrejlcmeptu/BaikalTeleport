@@ -204,6 +204,7 @@
         width: 100%;
         order: -1;
       }
+
       p {
         font-size: 19px;
         line-height: 183.5%;
@@ -230,7 +231,7 @@
 
     &-links {
       gap: 5px;
-      @media(max-width: 959px) and (min-width: 720px){
+      @media(max-width: 959px) and (min-width: 720px) {
         text-align: right;
       }
     }
@@ -311,6 +312,63 @@
     #map {
       overflow: hidden;
       border-radius: 44px;
+    }
+  }
+
+  &-news {
+    &-header {
+      gap: 15px;
+
+
+      &-tabs {
+        gap: 15px;
+        @media(max-width: 1279px) {
+          width: 100%;
+        }
+        @media(max-width: 719px) {
+          display: none;
+        }
+      }
+
+      &-tab {
+        padding: 16px 25px;
+        min-width: 155px;
+        white-space: nowrap;
+        width: auto;
+        border: 1px solid #CCCCCC;
+        border-radius: 11px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 143.4%;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #424D50;
+        @media(max-width: 1279px) {
+          min-width: 144px;
+          padding: 15px 19px;
+        }
+        @media(max-width: 959px) {
+          flex-grow: 1;
+        }
+
+        span {
+          opacity: .9;
+        }
+
+        @media(hover) {
+          &:hover {
+            border-color: #00C9A5;
+            color: #424D50;
+          }
+        }
+
+        &.active {
+          background: #00C9A5;
+          border-color: #00C9A5;
+          color: #fff;
+        }
+      }
     }
   }
 }
@@ -426,6 +484,49 @@
           margin-top: 10px;
         }
       }
+    }
+  }
+}
+
+.index-news {
+  .breadcrumb {
+    width: 100%;
+  }
+
+  .main-title {
+    flex-grow: 1;
+  }
+
+  .news-list {
+    margin-top: 60px;
+    @media(max-width: 1819px) {
+      margin-top: 70px;
+    }
+    @media(max-width: 1279px) {
+      margin-top: 30px;
+    }
+    @media(max-width: 959px) {
+      margin-top: 50px;
+    }
+    @media(max-width: 719px) {
+      margin-top: 20px;
+    }
+  }
+
+  .pagination {
+    width: 100%;
+    margin-top: 95px;
+    @media(max-width: 1819px) {
+      margin-top: 80px;
+    }
+    @media(max-width: 1279px) {
+      margin-top: 55px;
+    }
+    @media(max-width: 959px) {
+      margin-top: 80px;
+    }
+    @media(max-width: 719px) {
+      margin-top: 45px;
     }
   }
 }

@@ -1,47 +1,26 @@
 mixin discountsItem(props)
     a.discounts-item.swiper-slide(href='#')
-        picture
-            source(srcset='img/discounts/' + props.img + '.png' media="(min-width: 720px)")
-            img.discounts-item-img(src='img/discounts/' + props.img + '-m.png')
+        if discounts.picture
+            picture
+                source(srcset='img/discounts/' + props.img + '.png' media="(min-width: 720px)")
+                img.discounts-item-img(src='img/discounts/' + props.img + '-m.png')
+        else
+            img.discounts-item-img(src='img/discounts/' + props.img + '.png')
         h6.discounts-item-title!= props.title
         .discounts-item-text!= props.text
-        .discounts-item-btn
-            .btn.btn-white
-                span!= props.btn
-
--
-    var discountsList = [
-        {
-            title: 'Подключись <br> за 0 рублей',
-            text: 'Быстрый интернет <br> от 100 Mb',
-            img: '1',
-            btn: 'ПОдключить'
-        },
-        {
-            title: 'TV 30 дней <br> бесплатно',
-            text: 'Сотни тысячи фильмов <br> с приставкой “Смотрёшка”',
-            img: '2',
-            btn: 'ПОдключить'
-        },
-        {
-            title: 'Домашний <br> интернет',
-            text: 'Всего за 1 ₽ <br> в месяц',
-            img: '3',
-            btn: 'подробнее'
-        },
-        {
-            title: 'Приведи <br> друга',
-            text: 'И получи 1000 ₽ на баланс',
-            img: '4',
-            btn: 'подробнее'
-        }
-    ]
+        if props.btn
+            .discounts-item-btn
+                .btn.btn-white
+                    span!= props.btn
 
 section.discounts
     .container
-        h2.discounts-title Новым клиентам дарим 500 баллов и скидку 50% при подключении
-        p.discounts-description Разрабатываем умные сайты и сервисы, анализируем бизнес, предлагаем комплексные стратегии интернет-маркетинга, продвигаем в Яндекс и Google, настраиваем контекстную рекламу для малого и среднего бизнеса, привлекаем аудиторию в социальных сетях, генерируем трафик с гарантией результата
+        if discounts.title
+            h2.discounts-title!= discounts.title
+        if discounts.text
+            p.discounts-description!= discounts.text
+
         .discounts-slider.swiper
             .swiper-wrapper
-                for item in discountsList
+                for item in discounts.list
                   +discountsItem(item)

@@ -1,0 +1,35 @@
+extends ../layout/main
+
+block variables
+  -
+      var title = "404"
+      var pageClass = "index-404"
+      var discounts = {
+          title: 'А также наши услуги',
+          picture: false,
+          list: [
+              {
+                  title: 'Подключись <br> за 0 рублей',
+                  text: 'Быстрый интернет <br> от 100 Mb',
+                  img: '1-404',
+              },
+              {
+                  title: 'TV 30 дней <br> бесплатно',
+                  text: 'Сотни тысячи фильмов <br> с приставкой “Смотрёшка”',
+                  img: '2-404',
+              },
+              {
+                  title: 'Домашний <br> интернет',
+                  text: 'Всего за 1 ₽ <br> в месяц',
+                  img: '3-404',
+              },
+              {
+                  title: 'Приведи <br> друга',
+                  text: 'И получи 1000 ₽ на баланс',
+                  img: '4-404',
+              }
+          ]
+      }
+block content
+    include ../components/blocks/block-404
+    include ../components/blocks/discounts

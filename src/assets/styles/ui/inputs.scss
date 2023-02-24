@@ -144,6 +144,9 @@
   input {
     color: #FF2323;
     border-color: #FF2323;
+    &::placeholder {
+      color: inherit;
+    }
   }
 
   .input-item-error {

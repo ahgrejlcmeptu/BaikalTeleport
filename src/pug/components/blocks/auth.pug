@@ -1,0 +1,71 @@
+.auth-vector
+    img(src='img/auth/vector.svg' alt='')
+section.auth
+    .container
+        .auth-form
+            .auth-form-item.tabs-block.active
+                h2.auth-form-title Вход
+                    br
+                    | в личный кабинет
+                p.auth-form-text Для авторизации используйте
+                    br
+                    | номер договора или номер телефона
+                .auth-form-tabs.f
+                    .auth-form-tab.tabs-btn.active
+                        span По договору
+                    .auth-form-tab.tabs-btn
+                        span По телефону
+
+                form.auth-form-box.tabs-item.active.page-form-valid
+                    input(type='hidden' name='form-name' value='auth-contract')
+                    .auth-form-inputs
+                        .input-parent.input-item
+                            input(type='email' name='email' placeholder='Номер договора' data-required='validateText')
+                            .input-item-error Номер договора не найден
+                        .input-parent.input-item
+                            input(type='password' name='password' placeholder='Пароль' data-required='validateText')
+                            .input-item-error Неверный пароль
+                    .auth-form-forgot
+                        a(href='#') Забыли данные?
+                    .auth-form-btn
+                        button.btn.btn-green(type='submit')
+                            span Войти
+
+                form.auth-form-box.tabs-item.page-form(action='#')
+                    input(type='hidden' name='form-name' value='auth-phone')
+                    .auth-form-inputs
+                        .input-parent.input-item
+                            input(type='tel' name='phone' placeholder='+7 ( ___ ) ___  __  ___' data-required='validatePhone')
+                            .input-item-error Введён некорректный номер
+                    .auth-form-forgot
+                        a(href='#') Поменялся номер?
+                    .auth-form-btn
+                        button.btn.btn-green(type='submit')
+                            span отправить код
+
+
+
+            .auth-form-item.auth-form-code
+                h2.auth-form-title Код
+                    br
+                    | авторизации
+                p.auth-form-text Введите код из СМС-сообщения
+                    br
+                    | для авторизации
+                form.auth-form-box.tabs-item.active.page-form-valid
+                    .auth-form-inputs
+                        .input-parent.input-item
+                            input(type='text' name='code' placeholder='Код из СМС' data-required='validateText')
+                            .input-item-error Введён неверный код
+                    .auth-form-repeat!= 'Отправить код повторно через <span>60</span> сек'
+                    .auth-form-forgot
+                        a(href='#') Отправить код повторно
+                    .auth-form-btn
+                        button.btn.btn-green(type='submit')
+                            span отправить
+                        .btn.btn-stroke
+                            span Назад
+            .auth-form-link
+                a(href='#') Стать абонентом
+        .auth-img
+            img(src='img/auth/auth.png' alt='')

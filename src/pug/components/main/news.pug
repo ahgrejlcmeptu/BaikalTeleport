@@ -1,0 +1,30 @@
+section.main.main-top
+    .container
+        nav.breadcrumb(aria-label='Breadcrumb')
+            a.breadcrumb-link(href='/') Главная  /  
+            .breadcrumb-link(href='#') Новости и акции
+
+
+        .main-news-header.f.f-ac.f-js.f-w
+            h1.main-title Новости и акции
+            .main-news-header-tabs.f
+                a.main-news-header-tab.active(href='#')
+                    span Наши новости
+                a.main-news-header-tab(href='#')
+                    span тех. работы
+                a.main-news-header-tab(href='#')
+                    span Акции
+                a.main-news-header-tab(href='#')
+                    span Абонентам
+
+        .news-list.f.f-w
+          for item in newsList
+              +newsItem(item)
+        .pagination.f.f-jc
+            .pagination-item.pagination-item-arr
+                +svg('sprite.svg#prev')
+            .pagination-item 1
+            .pagination-item.active 2
+            .pagination-item 3
+            .pagination-item.pagination-item-arr
+                +svg('sprite.svg#next')
