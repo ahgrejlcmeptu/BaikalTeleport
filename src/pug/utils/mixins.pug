@@ -23,14 +23,24 @@ mixin tariffsItem(props, link)
                 span!= props.tv
                     |  
                     small ТВ-каналов
-
+        if props.cctv
+            .tariffs-item-cctv.f.f-ac
+                .tariffs-item-icon
+                    +svg('sprite.svg#archive')
+                if props.cctv.val
+                    span!= props.cctv.val
+                        |  
+                        small!= props.cctv.text
+                else
+                    span
+                        small!= props.cctv.text
         if props.add
             .tariffs-item-add
                 .tariffs-item-add-title Дополнительно:
                 for i in props.add
                     .tariffs-item-add-item
                         label.input-check
-                            input(type='checkbox' name= i.name)
+                            input(type='checkbox' name= i.name disabled)
                             span.f
                                 .input-check-box.circle
                                 .input-check-text!= i.text

@@ -44,6 +44,18 @@ new Swiper('.offers-slider', {
       const bg = document.querySelectorAll('.offers-bg')
       bg.forEach(i => i.classList.remove('active'))
       bg[this.realIndex].classList.add('active')
+    },
+    init: function () {
+      const el = this.slides.filter(i => {
+        if (!i.classList.contains('-duplicate')) return i
+      })
+
+      if (el.length === 1) {
+        const wrap = this.el
+        this.destroy(true, true)
+
+        wrap.classList.add('swiper-initialized')
+      }
     }
   }
 });

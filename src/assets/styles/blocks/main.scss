@@ -530,3 +530,62 @@
     }
   }
 }
+
+.index-cctv {
+  //background-image: linear-gradient(180deg, rgba(14, 10, 255, 0.27) 8%, rgba(217, 217, 217, 0) 85.9%);
+  //background-size: 100% 500px;
+  //background-repeat: no-repeat;
+  //@media(max-width: 1819px) {
+  //  background-size: 100% 430px;
+  //}
+  //@media(max-width: 1279px) {
+  //  background-size: 100% 570px;
+  //}
+  //@media(max-width: 959px) {
+  //  background-size: 100% 500px;
+  //}
+  //@media(max-width: 719px) {
+  //  background-size: 100% 600px;
+  //}
+
+  .main {
+    &-title {
+      font-size: 50px;
+      max-width: 20.8em;
+      margin-top: 60px;
+      @media(max-width: 1819px) {
+        font-size: 52px;
+        margin-top: 30px;
+      }
+      @media(max-width: 1279px) {
+        font-size: 37px;
+        margin-top: 20px;
+      }
+      @media(max-width: 959px) {
+        font-size: 32px;
+      }
+      @media(max-width: 719px) {
+        font-size: 25px;
+      }
+    }
+
+    &-description {
+      max-width: 36.25em;
+      margin-top: 25px;
+      @media(max-width: 1819px) {
+        margin-top: 40px;
+      }
+      @media(max-width: 1279px) {
+        margin-top: 20px;
+      }
+      @media(max-width: 959px) {
+        font-size: 14px;
+      }
+      @media(max-width: 719px) {
+        display: block;
+        font-size: 13px;
+      }
+    }
+  }
+}
+

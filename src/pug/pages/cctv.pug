@@ -13,8 +13,115 @@ block variables
               'Можно ли самостоятельно установить камеру видеонаблюдения?'
           ]
       }
+      var tariffsList = [
+          {
+              title: 'Облачное <br> хранилище 1.0',
+              text: 'Ваши записи <br> в надёжных руках',
+              cctv: {
+                  val: '2',
+                  text: 'недели архива'
+              },
+              price: '400',
+              oldPrice: '500',
+              btn: 'ПодключитЬ',
+              add: [
+                  {name: 'IP', text: 'Статический IP'},
+                  {name: 'camera', text: '2 камеры и более'},
+                  {name: 'internet', text: 'Интернет для дома'},
+              ]
+          },
+          {
+              title: 'Облачное <br> хранилище 2.0',
+              text: 'Ваши записи <br> в надёжных руках',
+              cctv: {
+                  val: '4',
+                  text: 'недели архива'
+              },
+              price: '600',
+              btn: 'ПодключитЬ',
+              add: [
+                  {name: 'IP', text: 'Статический IP'},
+                  {name: 'camera', text: '2 камеры и более'},
+                  {name: 'internet', text: 'Интернет для дома'},
+              ]
+          },
+          {
+              title: 'Online <br> слежение',
+              text: 'Базовый функционал для просмотра через удалёнку ',
+              cctv: {
+                  text: 'Только онлайн'
+              },
+              price: '200',
+              btn: 'ПодключитЬ',
+              add: [
+                  {name: 'IP', text: 'Статический IP'},
+                  {name: 'camera', text: '2 камеры и более'},
+                  {name: 'internet', text: 'Интернет для дома'},
+              ]
+          },
+      ]
+      var advantages = {
+          sprite: 'sprite-advantages',
+          list: [
+              {
+                  icon: '7',
+                  title: 'Непрерывная <br> запись 24/7',
+                  text: 'Храним архивы от двух <br> недель до месяца!'
+              },
+              {
+                  icon: '8',
+                  title: 'Удаленный доступ <br> к камерам',
+                  text: 'Подключайтесь через <br> мобильное приложение <br> из любой точки мира'
+              },
+              {
+                  icon: '9',
+                  title: 'Подключим <br> даже в поле',
+                  text: 'Имеем большой охват <br> сети и подключаем <br> удаленные районы'
+              },
+              {
+                  icon: '10',
+                  title: 'Монтаж и настройка <br> бесплатно!',
+                  text: 'Не берем деньги <br> за настройку и подбор <br> оборудования'
+              }
+          ]
+      }
+      var destination = {
+          header: {
+              title: 'Оцените качество видеосвязи с наших камер <br> в формате <a href="#">online</a>',
+          },
+          list: [
+              {
+                  img: '5',
+                  title: 'Перекресток в Хомутово',
+                  text: 'Помогаем жителям следить за ситуацией на оживленном участке дороги'
+              },
+              {
+                  img: '6',
+                  title: 'Пик любви в Иркутске',
+                  text: 'Делимся потрясающими видами на Иркутск с пика любви'
+              },
+              {
+                  img: '7',
+                  title: 'Вид на Байкал в Листвянке',
+                  text: 'Эта камера показывает красивейшие виды Байкала, которые открываются с одной из сопок Листвянки'
+              },
+          ]
+      }
+      var offersList = [
+          {
+              img: '4',
+              title: 'Подключите видеонаблюдение <br> в частный дом по супер-цене!',
+              text: 'Успейте оформить заявку до 20 марта',
+              form: 'offers-4'
+          }
+      ]
 
 block content
+    include ../components/main/cctv
+    include ../components/blocks/offers
+    include ../components/blocks/advantages
+    include ../components/blocks/destination
+    include ../components/cctv/tariffs
     include ../components/blocks/stories
     include ../components/blocks/questions
     include ../components/blocks/news

@@ -82,6 +82,8 @@
     max-width: 461px;
     width: 100%;
     padding: 50px 60px;
+    position: relative;
+    z-index: 1;
 
     @media(max-width: 1279px) {
       max-width: 343px;
@@ -251,6 +253,30 @@
 
       a {
         border-bottom: 1px solid rgba(#7A7F88, 0.29);
+        @media(hover) {
+          &:hover {
+            &:before {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:before {
+          z-index: -1;
+          content: url(/img/auth/hover.png);
+          position: absolute;
+          bottom: -240px;
+          left: -90px;
+          opacity: 0;
+          transition: .3s;
+          pointer-events: none;
+          @media(max-width: 1279px) {
+            left: -200px;
+          }
+          @media(max-width: 959px) {
+            display: none;
+          }
+        }
       }
     }
 

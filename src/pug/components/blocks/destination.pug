@@ -5,17 +5,12 @@ mixin destinationItem(props)
         .destination-item-title!= props.title
         p.destination-item-text!= props.text
 
--
-  var destinationList = [
-      {img: '1', title: 'Смотрите видео и TV в формате 4К без зависаний', text: 'Стабильное потоковое соединение не даст отвлечься от интересного фильма '},
-      {img: '2', title: 'Используйте стабильный онлайн на удалёнке', text: 'Передавайте большие файлы и подключайтесь к конференциям без неловких пауз'},
-      {img: '3', title: 'Играйте в любимые игры без лагов', text: 'Проводите свободное время с удовольствием и катайте <br> без нервов'},
-      {img: '4', title: 'Управляйте и следите за домом из любой точки мира', text: 'Подключайте системы видеонаблюдения и настраивайте устройства умного дома'},
-  ]
-
 .destination
     .container
+        if destination.header
+            .destination-header
+                h2.destination-title!= destination.header.title
         .destination-slider.swiper
             .swiper-wrapper
-                for item in destinationList
+                for item in destination.list
                   +destinationItem(item)

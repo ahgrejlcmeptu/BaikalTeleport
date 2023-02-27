@@ -1,7 +1,7 @@
 mixin advantagesItem(props)
     .advantages-item.f.f-ac.swiper-slide
         .advantages-item-icon
-            +svg(advantagesSprite + '.svg#' + props.icon)
+            +svg(advantages.sprite + '.svg#' + props.icon)
         .advantages-item-info
             .advantages-item-title!= props.title
             p.advantages-item-text!= props.text
@@ -10,5 +10,5 @@ mixin advantagesItem(props)
     .container
         .advantages-slider.swiper
             .swiper-wrapper.f-js
-                for item in advantagesList
+                for item in advantages.list
                   +advantagesItem(item)

@@ -26,6 +26,12 @@ mixin offersItem(props)
                                 .input-check-box.circle
                                 .input-check-text Я согласен с политикой конфиденциальности
                 .page-form-ok
+                    h2.offers-item-title Ваша заявка
+                        br
+                        | принята
+                    .offers-item-text Скоро мы свяжемся с вами. Спасибо за обращение.
+                        br
+                        | Оставайтесь на связи!
 
 section.offers
     for item, index in offersList
@@ -35,5 +41,5 @@ section.offers
         .swiper-wrapper
             for item in offersList
                 +offersItem(item)
-
-        .offers-pagination.swiper-pagination
+        if offersList.length < 1
+            .offers-pagination.swiper-pagination

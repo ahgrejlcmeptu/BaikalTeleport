@@ -232,15 +232,22 @@
     @media(max-width: 719px) {
       margin-top: 40px;
     }
+
+    .swiper-wrapper {
+      justify-content: flex-start;
+    }
   }
 
   &-item {
+    height: auto;
     position: relative;
     background: #FFFFFF;
     border-radius: 39px;
     width: 280px;
     padding: 35px 35px 40px;
     margin-right: 25px;
+    display: flex;
+    flex-direction: column;
     @media(max-width: 1819px) {
       width: 270px;
       padding: 35px 30px 45px;
@@ -270,6 +277,27 @@
         --color: rgba(255, 213, 149, .7);
         --colorHover: rgba(255, 180, 68, .7);
         --colorCheck: rgba(244, 165, 45, 1);
+      }
+    }
+
+    &_kit {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      .tariffs-item {
+        &-btn {
+          margin-top: auto;
+          margin-bottom: 40px;
+          @media(max-width: 1819px) {
+            margin-bottom: 35px;
+          }
+          @media(max-width: 1279px) {
+            margin-bottom: 33px;
+          }
+          @media(max-width: 719px) {
+            margin-bottom: 32px;
+          }
+        }
       }
     }
 
@@ -321,7 +349,8 @@
     }
 
     &-speed,
-    &-tv {
+    &-tv,
+    &-cctv {
       margin-top: 10px;
       gap: 10px;
       @media(max-width: 719px) {
@@ -398,6 +427,24 @@
         fill: #8F8F8F;
         stroke: #8F8F8F;
       }
+
+      + .tariffs-item-speed {
+        margin-top: 0;
+      }
+    }
+
+    &-cctv {
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: #8F8F8F;
+
+        @media(max-width: 959px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
       + .tariffs-item-speed {
         margin-top: 0;
       }
@@ -864,9 +911,47 @@
       background: #F7F7F7;
       border: 1px solid #F7F7F7;
 
+      @media(max-width: 1279px) {
+        width: 270px;
+        border-radius: 39px;
+        padding: 35px 30px 40px;
+      }
+
       &_discount {
         background: #FFF8F0;
         border-color: #FFC27A;
+      }
+
+      &-title {
+        font-size: 22px;
+      }
+
+      &-text {
+        font-size: 14px;
+      }
+
+      &-value {
+        @media(max-width: 1279px) {
+          font-size: 34px;
+        }
+
+        small {
+          @media(max-width: 1279px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-old {
+        @media(max-width: 1279px) {
+          font-size: 16px;
+        }
+
+        small {
+          @media(max-width: 1279px) {
+            font-size: 16px;
+          }
+        }
       }
     }
 
@@ -892,12 +977,15 @@
       @media(max-width: 719px) {
         display: none;
       }
+
       &-wrap {
         transform: translate(-15px, 10px) rotate(-48deg);
       }
+
       &-text {
         margin-bottom: 10px;
       }
+
       &-small {
         font-weight: 700;
         font-size: 22px;
@@ -914,7 +1002,32 @@
 
 .index-services {
   overflow-x: hidden;
+
   .wrapper {
     overflow: hidden;
+  }
+}
+
+.index-cctv {
+  .tariffs-services {
+    &-title {
+      @media(max-width: 959px) {
+        font-size: 27px;
+        max-width: 14.8em;
+      }
+      @media(max-width: 719px) {
+        font-size: 23px;
+      }
+    }
+
+    &-text {
+      @media(max-width: 719px) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .tariffs-item {
+
   }
 }

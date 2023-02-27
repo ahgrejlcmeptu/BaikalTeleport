@@ -1,0 +1,27 @@
+.popup#popup-kit.open
+    .popup-backdrop
+    .popup-content.js-backdrop
+        .popup-kit
+            .popup-close.js-close
+                +svg('sprite.svg#close')
+            form.page-form(action='#')
+                input(type='hidden' name='form-name')
+                .page-form-send
+                    .popup-kit-title Конструктор тарифа видеонаблюдения
+                    .popup-kit-inputs.f.f-w
+                        .input-parent.input-item
+                            .input-item-label Территория видеонаблюдения
+                            input(type='text' name='name' placeholder='Ваше имя')
+
+                    //.popup-connection-services.required-group
+                        .popup-connection-subtitle Выберите необходимую вам услугу
+                        .popup-connection-services-item
+                            label.input-check
+                                input(type='checkbox' name='Internet' checked)
+                                span.f
+                                    .input-check-box
+                                    .input-check-text Интернет
+
+                    .popup-kit-submit
+                        button.btn.btn-green(type='submit')
+                            span Перейти к заполнению заявки

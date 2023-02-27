@@ -1,0 +1,15 @@
+section.tariffs-services
+    .container
+        h2.tariffs-services-title Выберите подходящий тариф для своего дома
+        p.tariffs-services-text!= 'Тарифные планы действуют согласно указанному населенном пункту. Если вашего населенного пункта нет в списке, <a href="#" data-modal="popup-connection">оставьте заявку</a> на подключение и мы подберем для вас наиболее выгодный тариф!'
+        .tariffs-slider.swiper
+            .swiper-wrapper.f-js
+                for item in tariffsList
+                  +tariffsItem(item)
+                .tariffs-item.swiper-slide.tariffs-item_kit(style='background-image: url(img/tariffs/kit.svg)')
+                    h6.tariffs-item-title!= 'Соберите <br>тариф'
+                    p.tariffs-item-text!= 'Конструктор тарифов видеонаблюдения для загородного дома и дачи'
+
+                    .tariffs-item-btn
+                        .btn.btn-green
+                            span Собрать

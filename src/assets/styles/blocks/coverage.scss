@@ -328,6 +328,9 @@
 
       &-price {
         margin-top: 10px;
+        @media(max-width: 719px) {
+          margin-top: 30px;
+        }
       }
 
       &-btn {

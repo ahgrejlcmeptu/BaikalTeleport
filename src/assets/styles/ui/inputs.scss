@@ -129,6 +129,14 @@
     resize: none;
   }
 
+  &-label {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 17px;
+    color: #7A7F88;
+    margin-bottom: 15px;
+  }
+
   &-error {
     display: none;
     margin-top: 5px;
