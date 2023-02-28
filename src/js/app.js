@@ -12,6 +12,7 @@ import "./modal"
 import "./myGallery"
 import "./navigation"
 import "./select"
+import "./range"
 
 tabsInit()
 svgLength()

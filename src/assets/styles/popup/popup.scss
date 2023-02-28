@@ -34,10 +34,37 @@
         animation-delay: .2s;
       }
     }
+
     &.close {
       animation-delay: .2s;
+
       .popup-content {
         animation-name: fadeBottomOut;
+        animation-delay: 0s;
+      }
+    }
+  }
+
+  &-right {
+    .popup-right-item {
+      transform: translateX(100%);
+      animation-fill-mode: both;
+      animation-duration: .2s;
+      animation-timing-function: linear;
+    }
+
+    &.open {
+      .popup-right-item {
+        animation-name: rightIn;
+        animation-delay: .2s;
+      }
+    }
+
+    &.close {
+      animation-delay: .2s;
+
+      .popup-right-item  {
+        animation-name: rightOut;
         animation-delay: 0s;
       }
     }
@@ -89,12 +116,13 @@
     border-radius: 50%;
     border: 1px solid rgba(#7A7F88, .3);
     display: flex;
+
     svg {
       margin: auto;
       display: block;
       width: 8px;
       height: 11px;
-      stroke: var(--color, rgba(0,0,0, .46));
+      stroke: var(--color, rgba(0, 0, 0, .46));
     }
   }
 }
@@ -132,5 +160,23 @@
   }
   100% {
     transform: translateY(100%);
+  }
+}
+
+@keyframes rightIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

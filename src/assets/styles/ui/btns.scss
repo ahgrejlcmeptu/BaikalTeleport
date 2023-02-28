@@ -35,7 +35,7 @@
   &-green {
     border-color: #00C9A5;
     background: #00C9A5;
-    color: #fff;
+    color: var(--color, #fff);
 
     @media(hover) {
       &:hover {

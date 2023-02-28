@@ -1,7 +1,7 @@
-.popup#popup-kit.open
+.popup.popup-right#popup-kit
     .popup-backdrop
     .popup-content.js-backdrop
-        .popup-kit
+        .popup-kit.popup-right-item
             .popup-close.js-close
                 +svg('sprite.svg#close')
             form.page-form(action='#')
@@ -9,19 +9,94 @@
                 .page-form-send
                     .popup-kit-title Конструктор тарифа видеонаблюдения
                     .popup-kit-inputs.f.f-w
-                        .input-parent.input-item
+                        .input-parent.input-item.input-item_gray
                             .input-item-label Территория видеонаблюдения
-                            input(type='text' name='name' placeholder='Ваше имя')
+                            .select.js-select
+                                .select-header.js-select-header
+                                    span Частный дом
+                                    input(type='text' name='territory ' value='0' readonly)
+                                    .select-arr
+                                        +svg('sprite.svg#select')
+                                .select-body.js-select-body
+                                    .select-body-list
+                                        .select-item.js-select-item.active(data-value='0') Частный дом
+                                        .select-item.js-select-item(data-value='1') Участок
+                                        .select-item.js-select-item(data-value='2') Нежилое помещение
 
-                    //.popup-connection-services.required-group
-                        .popup-connection-subtitle Выберите необходимую вам услугу
-                        .popup-connection-services-item
+                        .input-parent.input-item.input-item_gray
+                            .input-item-label Количество этажей
+                            input(type='text' name='floors' value='1')
+
+                        .input-parent.input-item.input-item_gray
+                            .input-item-label Вид камеры
+                            .select.js-select
+                                .select-header.js-select-header
+                                    span Внешняя
+                                    input(type='text' name='camera ' value='0' readonly)
+                                    .select-arr
+                                        +svg('sprite.svg#select')
+                                .select-body.js-select-body
+                                    .select-body-list
+                                        .select-item.js-select-item.active(data-value='0') Внешняя
+                                        .select-item.js-select-item(data-value='1') Поворотная
+                                        .select-item.js-select-item(data-value='2') Внутренняя
+                                        .select-item.js-select-item(data-value='3') Внутренняя поворотная
+
+                        .input-checked
+                            .input-item-label Дополнительно
                             label.input-check
-                                input(type='checkbox' name='Internet' checked)
+                                input(type='checkbox' name='IP')
                                 span.f
                                     .input-check-box
-                                    .input-check-text Интернет
+                                    .input-check-text Статический IP
 
+                    .popup-kit-range
+                        .input-range
+                            .input-range-label.f.f-ac
+                                .input-range-label-icon
+                                    svg(viewBox='0 0 28 27')
+                                        path(fill='none' d='M26.0521 13.7342C26.0521 29.9665 1.94792 30.2102 1.94792 13.7342M1 10.2711V4.44586C1 4.25228 1.09688 4.07312 1.26085 3.97623C7.97285 0.0101381 20.0207 0.00618942 26.7391 3.97622C26.9031 4.07312 27 4.25228 27 4.44586V10.2711C27 10.7643 26.3929 11.0366 25.9995 10.751C20.4994 6.75729 7.51273 6.74291 2.00019 10.7506C1.60695 11.0365 1 10.7643 1 10.2711ZM14.0498 20.1605C12.5151 20.1605 9.98871 19.616 9.98871 17.1248C9.98871 14.3568 9.17331 11.566 14.0498 11.566C18.9263 11.566 18.2478 14.3568 18.2478 17.1248C18.2478 19.616 15.5845 20.1605 14.0498 20.1605Z' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                                | Выберите количество камер
+                            .input-range-item
+                                input(type='range' name='number' value='3' min='1' max='5' step='1')
+                                .input-range-progress
+                                    .input-range-progress-active
+                                .input-range-division
+                                    .input-range-cell
+                                        span 1
+                                    .input-range-cell
+                                        span 2
+                                    .input-range-cell
+                                        span 3
+                                    .input-range-cell
+                                        span 4
+                                    .input-range-cell
+                                        span 5
+
+                        .input-range
+                            .input-range-label.f.f-ac
+                                .input-range-label-icon
+                                    svg(viewBox='0 0 24 29')
+                                        path(fill='none' d='M23 11.8C23 14.7823 18.0751 17.2 12 17.2C5.92487 17.2 1 14.7823 1 11.8M23 17.2C23 20.1823 18.0751 22.6 12 22.6C5.92487 22.6 1 20.1823 1 17.2M23 22.6C23 25.5823 18.0751 28 12 28C5.92487 28 1 25.5823 1 22.6M23 6.4C23 9.38234 18.0751 11.8 12 11.8C5.92487 11.8 1 9.38234 1 6.4C1 3.41766 5.92487 1 12 1C18.0751 1 23 3.41766 23 6.4Z' stroke-width='2' stroke-linecap='round')
+                                | Выберите срок хранения архива
+                            .input-range-item
+                                input(type='range' name='archive' value='2' min='0' max='3' step='1')
+                                .input-range-progress
+                                    .input-range-progress-active
+                                .input-range-division
+                                    .input-range-cell
+                                        span Нет
+                                    .input-range-cell
+                                        span 7 дней
+                                    .input-range-cell
+                                        span 14 дней
+                                    .input-range-cell
+                                        span 30 дней
+
+
+                    .popup-kit-price
+                        | Стоимость тарифа:
+                        span 200 ₽
                     .popup-kit-submit
                         button.btn.btn-green(type='submit')
-                            span Перейти к заполнению заявки
+                            span Перейти к заполнению заявки

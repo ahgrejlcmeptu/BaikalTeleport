@@ -34,7 +34,10 @@ function selectBody(self) {
       self.classList.remove('active')
 
       if(span) span.textContent = item.textContent
-      if(input) input.value = item.dataset.value
+      if(input) {
+        input.value = item.dataset.value
+        input.setAttribute('value', item.dataset.value)
+      }
       input.classList.add('active')
 
     }
