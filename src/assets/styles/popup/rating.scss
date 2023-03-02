@@ -13,7 +13,7 @@
     }
   }
   .popup-content {
-    overflow: hidden;
+    //overflow: hidden;
   }
 }
 
@@ -22,10 +22,11 @@
   margin: auto;
   width: 100%;
   max-width: 1567px;
-  max-height: 100%;
+  //max-height: 100%;
   background: #FFFFFF;
   border-radius: 120px;
-  overflow: hidden;
+  max-height: 820px;
+  //overflow: hidden;
   @media(max-width: 1819px) {
     border-radius: 100px;
   }
@@ -34,7 +35,11 @@
     width: 50%;
     flex-grow: 1;
     overflow-y: auto;
+    border-radius: 120px 0 0 120px;
     padding: 50px 30px 50px 60px;
+    @media(max-width: 1819px) {
+      border-radius: 100px 0 0 100px;
+    }
 
     img {
       display: block;

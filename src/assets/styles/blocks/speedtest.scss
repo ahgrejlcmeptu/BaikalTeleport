@@ -4,34 +4,39 @@
   background-size: 100% 701px;
   background-repeat: no-repeat;
 
-  &:before {
-    pointer-events: none;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 853px;
-    background: radial-gradient(19.11% 55.18% at 33.91% 41.5%, #AAFAFF 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    min-width: 1920px;
-    width: 100%;
-    @media(max-width: 1819px) {
-      height: 720px;
-      left: -40px;
-      min-width: 1240px;
-    }
-    @media(max-width: 1279px) {
-      left: auto;
-      right: -445px;
-    }
-    @media(max-width: 959px) {
-      height: 630px;
-      top: 30px;
-      right: -406px;
-    }
-    @media(max-width: 719px) {
-      top: 163px;
-      right: -371px;
+  .wrapper {
+    position: relative;
+    overflow: hidden;
+    &:before {
+      z-index: -2;
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: 0;
+      height: 853px;
+      background: radial-gradient(19.11% 55.18% at 33.91% 41.5%, #AAFAFF 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      min-width: 1920px;
+      width: 100%;
+      @media(max-width: 1819px) {
+        height: 720px;
+        left: -40px;
+        min-width: 1240px;
+      }
+      @media(max-width: 1279px) {
+        left: auto;
+        right: -445px;
+      }
+      @media(max-width: 959px) {
+        height: 630px;
+        top: 30px;
+        right: -406px;
+      }
+      @media(max-width: 719px) {
+        top: 163px;
+        right: -371px;
+      }
     }
   }
 }

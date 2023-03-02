@@ -41,5 +41,5 @@ section.offers
         .swiper-wrapper
             for item in offersList
                 +offersItem(item)
-        if offersList.length < 1
+        if offersList.length > 1
             .offers-pagination.swiper-pagination
