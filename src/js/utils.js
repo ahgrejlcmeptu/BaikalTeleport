@@ -18,15 +18,13 @@ export function bodyLock() {
 export function bodyUnLock() {
   const lockPadding = document.querySelectorAll('.lock-padding');
   const body = document.querySelector('body');
-  setTimeout(function () {
-    if (lockPadding.length > 0) {
-      for (let index = 0; index < lockPadding.length; index++) {
-        const el = lockPadding[index];
-        el.style.paddingRight = '0px'
-      }
+  if (lockPadding.length > 0) {
+    for (let index = 0; index < lockPadding.length; index++) {
+      const el = lockPadding[index];
+      el.style.paddingRight = '0px'
     }
-    body.style.overflow = null
-  }, 300)
+  }
+  body.style.overflow = null
 }
 
 export function videoBg() {

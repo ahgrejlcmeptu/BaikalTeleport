@@ -1,66 +1,67 @@
 .popup.popup-right#popup-rating
     .popup-backdrop
     .popup-content.js-backdrop.popup-right-item
-        .popup-rating.f
+        .popup-rating
             .popup-close.js-close
                 +svg('sprite.svg#close')
-            .popup-rating-left
-                img(src='img/rating/1-reviews.png')
-            .popup-rating-right
-                .popup-rating-header.js-create
-                    .rating-item.swiper-slide.js-create-block
-                        .rating-item-logo
-                            img(src='img/rating/2.png')
-                        p.rating-item-text Отзывы и рейтинг о «Байкал Телепорт» размещаемые на сайте «Яндекс», являются точными и достоверными
-                        .rating-item-rows
-                            .rating-item-span Рейтинг: 
-                                span 3,3
-                            .rating-item-span Отзывов: 
-                                span 124
-                        .rating-item-stars
-                            .rating-item-star
-                                +svg('sprite.svg#star')
-                                .rating-item-star-active
+            .popup-rating-wrap.f
+                .popup-rating-left
+                    img(src='img/rating/1-reviews.png')
+                .popup-rating-right
+                    .popup-rating-header.js-create
+                        .rating-item.swiper-slide.js-create-block
+                            .rating-item-logo
+                                img(src='img/rating/2.png')
+                            p.rating-item-text Отзывы и рейтинг о «Байкал Телепорт» размещаемые на сайте «Яндекс», являются точными и достоверными
+                            .rating-item-rows
+                                .rating-item-span Рейтинг: 
+                                    span 3,3
+                                .rating-item-span Отзывов: 
+                                    span 124
+                            .rating-item-stars
+                                .rating-item-star
                                     +svg('sprite.svg#star')
-                            .rating-item-star
-                                +svg('sprite.svg#star')
-                                .rating-item-star-active
+                                    .rating-item-star-active
+                                        +svg('sprite.svg#star')
+                                .rating-item-star
                                     +svg('sprite.svg#star')
-                            .rating-item-star
-                                +svg('sprite.svg#star')
-                                .rating-item-star-active
+                                    .rating-item-star-active
+                                        +svg('sprite.svg#star')
+                                .rating-item-star
                                     +svg('sprite.svg#star')
-                            .rating-item-star
-                                +svg('sprite.svg#star')
-                                .rating-item-star-active
+                                    .rating-item-star-active
+                                        +svg('sprite.svg#star')
+                                .rating-item-star
                                     +svg('sprite.svg#star')
-                            .rating-item-star
-                                +svg('sprite.svg#star')
-                                .rating-item-star-active
+                                    .rating-item-star-active
+                                        +svg('sprite.svg#star')
+                                .rating-item-star
                                     +svg('sprite.svg#star')
-                form.page-form(action='#')
-                    input(type='hidden' name='form-name')
-                    .page-form-send
-                        .popup-rating-title Заявка на подключение
-                        p.popup-rating-text Для всех новых абонентов предоставляется тестовый период на 1 месяц!
-                        .popup-rating-inputs
-                            .input-parent.input-item
-                                input(type='text' name='name' placeholder='Ваше имя')
-                            .input-parent.input-item
-                                input(type='tel' name='phone' placeholder='+7 (___) ___ __ __' data-required='validatePhone')
-                                .input-item-error Некорректно введён телефон
-                            .input-parent.input-item
-                                textarea(name='comment' placeholder='СНТ “Новое”, ул. Пушкина, 8')
-                        .popup-rating-submit
-                            button.btn.btn-green(type='submit')
-                                span отправить заявку
-                        .popup-rating-politic
-                            label.input-check.input-check-required
-                                input(type='checkbox' name='politic' checked)
-                                span.f
-                                    .input-check-box.circle
-                                    .input-check-text Согласен с условиями пользовательского соглашения и принимаю его
+                                    .rating-item-star-active
+                                        +svg('sprite.svg#star')
+                    form.page-form(action='#')
+                        input(type='hidden' name='form-name')
+                        .page-form-send
+                            .popup-rating-title Заявка на подключение
+                            p.popup-rating-text Для всех новых абонентов предоставляется тестовый период на 1 месяц!
+                            .popup-rating-inputs
+                                .input-parent.input-item
+                                    input(type='text' name='name' placeholder='Ваше имя')
+                                .input-parent.input-item
+                                    input(type='tel' name='phone' placeholder='+7 (___) ___ __ __' data-required='validatePhone')
+                                    .input-item-error Некорректно введён телефон
+                                .input-parent.input-item
+                                    textarea(name='comment' placeholder='СНТ “Новое”, ул. Пушкина, 8')
+                            .popup-rating-submit
+                                button.btn.btn-green(type='submit')
+                                    span отправить заявку
+                            .popup-rating-politic
+                                label.input-check.input-check-required
+                                    input(type='checkbox' name='politic' checked)
+                                    span.f
+                                        .input-check-box.circle
+                                        .input-check-text Согласен с условиями пользовательского соглашения и принимаю его
 
-                    .page-form-ok
-                        .popup-rating-title Заявка на отправлена
-                        p.popup-rating-text Заявка на отправлена
+                        .page-form-ok
+                            .popup-rating-title Заявка на отправлена
+                            p.popup-rating-text Заявка на отправлена

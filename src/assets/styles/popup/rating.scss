@@ -1,15 +1,35 @@
 #popup-rating {
   .popup-close {
-    @media(min-width: 1820px) {
-      top: 0;
-      right: -127px;
+    @media(min-width: 960px) {
+      right: 0;
+      top: -70px;
+      --stroke: #fff;
       width: 35px;
       height: 35px;
-      --stroke: #FFFFFF;
+      @media(max-width: 1819px) {
+        right: 50px;
+      }
+      @media(max-width: 1279px) {
+        right: 30px;
+        width: 23px;
+        height: 23px;
+        top: -60px;
+      }
     }
-    @media(max-width: 1819px) {
-      top: 35px;
-      right: 50px;
+    @media(max-width: 959px) {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 1px solid rgba(#00B695, .3);
+      position: static;
+      display: flex;
+      --stroke: rgba(0, 0, 0, .46);
+
+      svg {
+        width: 11px;
+        height: 11px;
+        margin: auto;
+      }
     }
   }
   .popup-content {
@@ -19,16 +39,21 @@
 
 .popup-rating {
   position: relative;
-  margin: auto;
+  margin: 100px auto 0;
   width: 100%;
   max-width: 1567px;
   //max-height: 100%;
-  background: #FFFFFF;
-  border-radius: 120px;
-  max-height: 820px;
-  //overflow: hidden;
-  @media(max-width: 1819px) {
-    border-radius: 100px;
+
+
+  &-wrap {
+    overflow: hidden;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 120px;
+    background: #FFFFFF;
+    @media(max-width: 1819px) {
+      border-radius: 100px;
+    }
   }
 
   &-left {
@@ -48,14 +73,19 @@
   }
 
   &-right {
+    margin-right: -30px;
     width: 525px;
     flex-shrink: 0;
     position: relative;
     border-left: 1px solid rgba(#7A7F88, .21);
-    padding: 35px 75px 50px;
+    padding: 35px 105px 50px 75px;
     overflow-y: auto;
+    border-radius: 0 120px 120px 0;
     @media(max-width: 1819px) {
-      padding: 35px 50px 50px;
+      border-radius: 0 100px 100px 0;
+    }
+    @media(max-width: 1819px) {
+      padding: 35px 80px 50px 50px;
       width: 475px;
     }
   }

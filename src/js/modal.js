@@ -1,5 +1,7 @@
 import {bodyLock, bodyUnLock} from "./utils";
 
+let closeId = null
+
 export function openPopup(btn) {
   const id = btn.dataset.modal
   const form = btn.dataset.form
@@ -33,11 +35,11 @@ function closePopup(modal) {
     }
 
     modal.classList.add('close')
-    setTimeout(() => {
+    closeId = setTimeout(() => {
       modal.classList.remove('close', 'open')
       const openModal = document.querySelectorAll('.popup.open')
       if (!openModal.length) bodyUnLock()
-    }, 510)
+    }, 400)
   }
 }
 
