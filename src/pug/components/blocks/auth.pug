@@ -36,7 +36,7 @@ section.auth
                     .auth-form-inputs
                         .input-parent.input-item
                             input(type='tel' name='phone' placeholder='+7 ( ___ ) ___  __  ___' data-required='validatePhone')
-                            .input-item-error Введён некорректный номер
+                            .input-item-error Некорректно введён телефон
                     .auth-form-forgot
                         a(href='#') Поменялся номер?
                     .auth-form-btn
@@ -66,6 +66,6 @@ section.auth
                         .btn.btn-stroke
                             span Назад
             .auth-form-link
-                a(href='#') Стать абонентом
+                a(href='#' data-modal='popup-connection') Стать абонентом
         .auth-img
             img(src='img/auth/auth.png' alt='')

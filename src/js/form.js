@@ -65,6 +65,7 @@ export function sendForm(item) {
   item.onsubmit = async (e) => {
     e.preventDefault()
     let data = new FormData(item)
+    const id = item.id
     const src = item.getAttribute('action');
     const ya = item.dataset.ya;
     const checkInput = item.querySelectorAll('.required-group')
@@ -103,6 +104,19 @@ export function sendForm(item) {
 
         error = check ? error : true
       })
+    }
+
+    if (id === 'popup-form-kit') {
+      formKit = dataJson
+
+      setTimeout(() => {
+        document.querySelector('[data-modal="popup-connection"]').click()
+      }, 500)
+      return
+    }
+
+    if (formKit) {
+      dataJson.kit = formKit
     }
 
     if (error) return

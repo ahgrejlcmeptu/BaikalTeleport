@@ -78,6 +78,13 @@
     font-size: 16px;
     line-height: 18px;
     color: #424D50;
+    transition: .3s color;
+
+    @media(hover) {
+      &:hover {
+        color: #00C9A5;
+      }
+    }
 
     &.active {
       display: none;

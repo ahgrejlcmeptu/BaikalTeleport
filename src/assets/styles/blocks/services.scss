@@ -42,6 +42,9 @@
     @media(max-width: 719px) {
       font-size: 27px;
       margin-bottom: 40px;
+      br {
+        display: none;
+      }
     }
   }
 

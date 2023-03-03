@@ -18,6 +18,15 @@ tabsInit()
 svgLength()
 textAccordion()
 
+window.formKit = null
+//
+// const submitKit = document.querySelector('.popup-kit-submit .btn')
+// if (submitKit) {
+//   submitKit.addEventListener('click', () => {
+//
+//   })
+// }
+
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a')
   const modal = e.target.closest('[data-modal]')

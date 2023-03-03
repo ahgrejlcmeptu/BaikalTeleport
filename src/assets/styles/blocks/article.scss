@@ -305,4 +305,19 @@
       display: none;
     }
   }
+
+  .swiper-pagination {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 30px;
+    opacity: 0;
+    visibility: hidden;
+    @media(max-width: 959px) {
+      opacity: 1;
+      visibility: visible;
+      bottom: 20px;
+    }
+  }
 }

@@ -52,7 +52,9 @@
     border-radius: 21px;
     padding: 30px 40px 40px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     @media(max-width: 1279px) {
       width: calc(50% - 10px);
     }
@@ -68,10 +70,14 @@
     &-title {
       line-height: 131%;
       letter-spacing: 0.01em;
+      @media(max-width: 719px) {
+        margin-bottom: 15px;
+      }
     }
 
     &-text {
-      margin: 30px 0;
+      width: 100%;
+      margin: 30px 0 0;
       font-size: 14px;
       line-height: 174%;
       color: #3E4148;
@@ -79,7 +85,7 @@
         color: #7A7F88;
       }
       @media(max-width: 1279px) {
-        margin: 15px 0 20px;
+        margin: 15px 0 0;
       }
       @media(max-width: 719px) {
         font-size: 13px;

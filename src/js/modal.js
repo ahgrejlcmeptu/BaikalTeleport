@@ -28,6 +28,10 @@ function closePopup(modal) {
 
     if (!close && !backdrop) return;
 
+    if (!(modal.id === 'popup-kit' && target.closest('.btn.js-close'))) {
+      formKit = null
+    }
+
     modal.classList.add('close')
     setTimeout(() => {
       modal.classList.remove('close', 'open')

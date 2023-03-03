@@ -1,12 +1,13 @@
 mixin requisitesItem(props)
     .requisites-item
         .requisites-item-title!= props.title
-        p.requisites-item-text!= props.text
         .requisites-item-btn
             a.btn.btn-stroke(download href='#')
                 span Скачать
                 +svg('sprite.svg#list')
                 span .pdf
+        p.requisites-item-text!= props.text
+
 
 section.requisites
     .container

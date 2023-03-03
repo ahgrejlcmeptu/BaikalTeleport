@@ -42,6 +42,12 @@
     a {
       color: #00C9A5;
       border-bottom: 1px solid #00C9A5;
+      @media(hover) {
+        &:hover {
+          color: #008a71;
+          border-color: #008a71;
+        }
+      }
     }
   }
 

@@ -260,12 +260,21 @@ body {
   display: flex;
   cursor: pointer;
   background: #F4F4F4;
-  transition: .3s;
+  transition: .3s background-color;
   svg {
     margin: auto;
     width: 11px;
     height: 17px;
     stroke: #7A7F88;
+    transition: .3s stroke;
+  }
+  @media(hover) {
+    &:hover {
+      background: #00C9A5;
+      svg {
+        stroke: #fff;
+      }
+    }
   }
 
   &-prev{

@@ -4,7 +4,7 @@
         .popup-kit.popup-right-item
             .popup-close.js-close
                 +svg('sprite.svg#close')
-            form.page-form(action='#')
+            form.page-form#popup-form-kit(action='#')
                 input(type='hidden' name='form-name')
                 .page-form-send
                     .popup-kit-title Конструктор тарифа видеонаблюдения
@@ -14,7 +14,7 @@
                             .select.js-select
                                 .select-header.js-select-header
                                     span Частный дом
-                                    input(type='text' name='territory ' value='0' readonly)
+                                    input(type='text' name='territory' value='0' readonly)
                                     .select-arr
                                         +svg('sprite.svg#select')
                                 .select-body.js-select-body
@@ -32,7 +32,7 @@
                             .select.js-select
                                 .select-header.js-select-header
                                     span Внешняя
-                                    input(type='text' name='camera ' value='0' readonly)
+                                    input(type='text' name='camera' value='0' readonly)
                                     .select-arr
                                         +svg('sprite.svg#select')
                                 .select-body.js-select-body
@@ -98,5 +98,5 @@
                         | Стоимость тарифа:
                         span 200 ₽
                     .popup-kit-submit
-                        button.btn.btn-green(type='submit')
+                        button.btn.btn-green.js-close(type='submit')
                             span Перейти к заполнению заявки

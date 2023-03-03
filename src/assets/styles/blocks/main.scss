@@ -79,6 +79,7 @@
       letter-spacing: -0.03em;
       color: #00C9A5;
       opacity: 0.86;
+      transition: .3s;
       white-space: nowrap;
       @media(max-width: 1819px) {
         font-size: 120px;
@@ -94,6 +95,13 @@
       @media(max-width: 719px) {
         font-size: 52px;
         margin-top: 5px;
+      }
+      a {
+        @media(hover) {
+          &:hover {
+            color: #008a71;
+          }
+        }
       }
     }
 
